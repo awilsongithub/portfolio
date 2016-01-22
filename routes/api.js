@@ -8,10 +8,10 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
 
-// LOCK UP OUR MODIFICATION METHODS BUT NOT VIEW METHODS
+// AUTHENTICATION
+// LOCK UP POST ROUTES BUT NOT GETS
 // THIS IS .USE MIDDLEWARE = FUNCTION THAT HAS ACCESS TO REQ, RES, NEXT OBJECTS.
 // NEXT CALLS NEXT MIDDLEWARE IN LINE BETWEEN ME AND REQUEST HANDLER.
-
 function isAuthenticated (req, res, next) {
       if(req.method ==='GET'){
          // continue to next middlewaree or req handler
@@ -36,31 +36,80 @@ router.use('/posts', isAuthenticated);
 // 2) response object from server
 router.route('/posts')
 
-   // create new post
+   // CREATE NEW POST
    .post(function(req, res){
-      //temp
-      res.send({message: 'TODO create a new post'});
+      //temp removed: res.send({message: 'TODO create a new post'});
+      var post = new Post(); // post document creation with param DATA
+      post.text = req.body.text;
+      post.created_by = req.body.created_by;
+      post.save(function(err, post) {
+         if (err) {
+            return res.send(500, err);
+         }
+         return res.json(post);
+      });
    })
-   // get all posts in db
+
+   // GET ALL POSTS
    .get(function(req, res){
-      //temp solution w no db
-      res.send({message: 'TODO return all posts'});
-   })
+      // temp solution w no db removed: res.send({message: 'TODO return all posts'});
+      // FIND AND RETURN POSTS UNLESS ERROR
+      console.log('debug1');
+      Post.find(function(err, posts){
+         console.log('debug2');
+         if (err) {
+            return res.send(500, err);
+         }
+         return res.send(200, posts);
+      });
+   });
 
 
-// API FOR ACTIONS ON INDIVIDUAL POST (modify, get, delete). EXPRESS SERVER KNOWS TO PARSE PATH PARAMETERS AS A VARIABLE
+// ACTIONS ON INDIVIDUAL POSTS
+// EXPRESS SERVER KNOWS TO PARSE PATH PARAMETERS AS VARS
    router.route('/posts/:id')
 
-       .put(function(req,res){
-           return res.send({message:'TODO modify an existing post by using param ' + req.param.id});
-       })
+      // FIND BY ID THEN EXECUTE FUNCTION
+      .get(function(req,res){
+         // temp: return res.send({message:'TODO get existing post w/ param ' + req.param.id});
+         Post.findById(req.params.id, function(err, post){
+            if (err){
+               res.send(err);
+            }
+            res.json(post);
+         });
+      })
 
-       .get(function(req,res){
-           return res.send({message:'TODO get an existing post by using param ' + req.param.id});
-       })
+      // FIND BY ID THEN MODIFY POST
+      .put(function(req,res){
+         // temp: return res.send({message:'TODO modify post ' + req.param.id});
+         Post.findById(req.params.id, function(err, post){
+            if (err){
+               res.send(err);
+            }
+            post.created_by = req.body.created_by;
+            post.text = req.body.text;
+            post.save(function(err, post){
+               if (err){
+                  res.send(err);
+               }
+               res.json(post);
+            });
+         });
+      })
 
-       .delete(function(req,res){
-           return res.send({message:'TODO delete an existing post by using param ' + req.param.id})
-       });
+      // DELETE POST WITH ID IN REQ.PARAMS
+      .delete(function(req,res){
+         // temp: return res.send({message:'TODO delete post of id: ' + req.param.id})
+         Post.remove({
+            _id: req.params.id
+         }, function(err) {
+            if (err) {
+               res.send(err);
+            }
+            res.json('deleted');
+         });
+      });
 
+// EXPOSE ROUTER TO GLOBAL SCOPE
 module.exports = router

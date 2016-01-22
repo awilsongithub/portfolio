@@ -3,11 +3,13 @@
 // passport-init (functions to check if user exists, etc, etc)
 // 2. these pass back a user or false
 // 3. and user is redirected accordingly
-// 4. note: full paths needed in code blocks since those are "static strings"
+// 4. note: full paths needed in code blocks since those are static strings
 
 var express = require('express');
 var router = express.Router();
 
+// EXPOSE THESE ROUTES TO GLOBAL SCOPE
+// ROUTE SYNTAX: ROUTER + TYPE HTTP REQ + PARAMS = (/PATH, CALLBACK FUNCTION)
 module.exports = function(passport){
 
    // send success  state > angular
