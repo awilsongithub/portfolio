@@ -5,9 +5,26 @@
 var express = require('express');
 var router = express.Router();
 
+// LOCK UP OUR MODIFICATION METHODS BUT NOT VIEW METHODS
+// THIS IS .USE MIDDLEWARE = FUNCTION THAT HAS ACCESS TO REQ, RES, NEXT OBJECTS.
+// NEXT CALLS NEXT MIDDLEWARE IN LINE BETWEEN ME AND REQUEST HANDLER.
+router.use(function(req, res, next){
+
+   if(req.method ==='GET'){
+      // continue to next middlewaree or req handler
+      return next();
+   }
+   if(!req.isAuthenticated()){
+      // user not authenticated, redirect to login page
+      return res.redirect('/#login');
+   }
+   // user authenticated, continue to next m.ware or handler
+   return next();
+});
+
 
 // API TO CREATE OR  GET (ALL) POSTS
-// THEN WE ADD THE /POSTS 'API HANDLERS' 
+// THEN WE ADD THE /POSTS 'API HANDLERS'
 // REG'D TO HTTP METHODS
 // EXPRESS ROUTE REQUEST HANDLERS TAKE TWO FUNCTIONS:
 // 1) request object from client
