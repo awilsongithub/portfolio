@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 // CREATE SCHEMA SPECIFYING KEYS, DATA TYPES, DEFAULTS
 var postSchema = new mongoose.Schema({
    text: String,
-   username: String, // pointing to user id
+   created_by: String, // mod5 starts syas: should be changed to ObjectId, ref "User"
    created_at: {type: Date, default: Date.now}
 });
 

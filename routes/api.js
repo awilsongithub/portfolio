@@ -1,27 +1,32 @@
 // IN THIS ROUTE...
-// EXPRESS + "EXPRESS.ROUTER() CLASS" > MODULE AS "ROUTER" > + OUR CODE ADDITIONS > EXPORT TO APP
-// THESE ARE CRUD ROUTES FOR CLIENT TO ACCESS HANDLER LOGIC AND INTERACT WITH DATA
+// EXPRESS + "EXPRESS.ROUTER() CLASS" > MODULE AS "ROUTER"
+// ... > + OUR CODE ADDITIONS > EXPORT TO APP
+// CRUD ROUTES FOR CLIENT > HANDLER LOGIC > INTERACT WITH DATA
 
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var Post = mongoose.model('Post');
 
 // LOCK UP OUR MODIFICATION METHODS BUT NOT VIEW METHODS
 // THIS IS .USE MIDDLEWARE = FUNCTION THAT HAS ACCESS TO REQ, RES, NEXT OBJECTS.
 // NEXT CALLS NEXT MIDDLEWARE IN LINE BETWEEN ME AND REQUEST HANDLER.
-router.use(function(req, res, next){
 
-   if(req.method ==='GET'){
-      // continue to next middlewaree or req handler
-      return next();
-   }
-   if(!req.isAuthenticated()){
-      // user not authenticated, redirect to login page
-      return res.redirect('/#login');
-   }
-   // user authenticated, continue to next m.ware or handler
-   return next();
-});
+function isAuthenticated (req, res, next) {
+      if(req.method ==='GET'){
+         // continue to next middlewaree or req handler
+         return next();
+      }
+      if(req.isAuthenticated()){
+         // user authenticated, > next mware or req handler
+         return next();
+      }
+      // else redirect back to /login
+      return res.redirect('/#login'); // why #???
+   };
 
+// REGISTER ABOVE AUTHENTICATION MIDDLEWARE
+router.use('/posts', isAuthenticated);
 
 // API TO CREATE OR  GET (ALL) POSTS
 // THEN WE ADD THE /POSTS 'API HANDLERS'
