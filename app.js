@@ -8,16 +8,20 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 // we don't need to require bcrypt
-
-// ROUTES, MONGOOSE SCHEMAS
-// DELETED BOILERPLATE ROUTES, REPLACED WITH THESE
-// MODEL REQUIRE NEEDS HAPPEN BEFORE REQUIRE/INIT PASSPORT
-require('./models/models');
-var api = require('./routes/api');
-var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose');
 // connect to mongodb on default mongo port 27017
 mongoose.connect('mongodb://localhost/chirp-test');
+
+// MODEL REQUIRE NEEDS HAPPEN BEFORE REQUIRE/INIT PASSPORT
+require('./models/models');
+
+// IMPORT THE ROUTERS
+// ROUTES, MONGOOSE SCHEMAS
+// DELETED BOILERPLATE ROUTES, REPLACED WITH THESE
+var index = require('./routes/index');
+var api = require('./routes/api');
+var authenticate = require('./routes/authenticate')(passport);
+
 var app = express();
 
 // VIEW ENGINE SETUP
@@ -45,6 +49,7 @@ app.use(passport.session());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 
 // ROUTERS: REGISTER & MOUNT
+app.use('/', index);
 app.use('/auth', authenticate);
 app.use('/api', api);
 
