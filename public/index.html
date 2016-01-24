@@ -15,24 +15,27 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
   <!-- map body to angular module "app" -->
   <body ng-app="chirpApp">
      <!-- does a container go here? -->
+
+        <!-- NAV    -->
         <nav class="navbar-fluid navbar-default navbar-fixed-top">
-           <div class="container">
-             <a class="navbar-brand" href="#">Adam Wilson</a>
-             <p class="navbar-text">Front End Web Developer</p>
+            <div class="container">
+               <a class="navbar-brand" href="#">Adam Wilson</a>
+               <p class="navbar-text">Front End Web Developer</p>
 
-             <!-- 3 AUTHENTICATION SENSITIVE LINKS WITH NG-HIDE/SHOW -->
-             <p class="navbar-right navbar-text" ng-hide='authenticated'><a href="#/login">Administrator Login</a> or <a href="#/signup">Register</a></p>
+               <!-- HIDE WHEN AUTHENTICATED -->
+               <p class="navbar-right navbar-text" ng-hide='authenticated'><a href="#/login">Administrator Login</a> or <a href="#/signup">Register</a></p>
 
-            <p class='navbar-right navbar-text' ng-show='authenticated'><a href="#" ng-click="signout()">Logout</a></p>
+               <!-- SHOW WHEN AUTHENTICATED -->
+               <p class='navbar-right navbar-text' ng-show='authenticated'><a href="#" ng-click="logout()">Logout</a></p>
+               <p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
 
-            <p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
-
-           </div>
+            </div>
          </nav>
         <div class="col-md-offset-2 col-md-8">
 
-        <div ng-view></div>
+           <!-- PARTIALS APPEAR IN NG-VIEW -->
+           <div ng-view></div>
 
-    </div>
+        </div>
   </body>
 </html>
