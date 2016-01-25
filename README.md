@@ -24,6 +24,7 @@ I used a systems development checklist I created in college to plan this project
 [See wireframes here.](https://drive.google.com/folderview?id=0BwevQAXPVAtfNl90VjF4eDNVQkk&usp=sharing)
 
 ##Hurdles Overcome
-
+1. Tutorial Inconsistencies: I used a Microsoft Virtual Academy four hour tutorial to build out a very basic MEAN app. The video demos had great teaching content but the code they wrote in them several times didn't work and they swapped in pre-baked entire files instead of debugging. I therefore had to debug on my own which actually helped me understand the code.
+2. Strategy for evolving the basic app  with only three input fields in the Post model into something with many fields and making those changes across the MongoDB collection, routes, controllers and views was a challenge. I first created static pages from my wireframes to clarify my data needs. Then I began integration work.
 
 ##Unsolved Problems

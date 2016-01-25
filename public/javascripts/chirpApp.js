@@ -44,7 +44,7 @@ app.config(function($routeProvider){
 // http.get all posts from api, put in factory object
 // CALL IT POSTSERVICE, PAS IT HTTP AS IT WILL NEED IT.
 // WE'LL PASS THIS TO MAINCONTROLLER BY INJECTING IT IN PARAMS OF CTRLR
-// THIS FACTORY ABSTRACTS ALL THIS LOGIC AWAY SO WE DO IT ONCE AND CREATION
+// THIS FACTORY ABSTRACTS ALL THIS LOGIC AWAY SO WE DO IT ONCE AND
 // CALL IT IN DIF. PLACES IN APP. it's NAME IS POSTSERVICE
 
 // why commented out????
@@ -69,7 +69,21 @@ app.factory('postService', function($resource){
 app.controller('mainController', function($scope, $rootScope, postService){
    // attach variables onto our $scope (post objects, posts array)
    $scope.posts = postService.query(); // query is get req
-   $scope.newPost = {created_by: '', text: '', created_at: ''};
+
+
+
+
+
+   // ORIGINAL CODE
+   // $scope.newPost = {created_by: '', text: '', created_at: ''};
+
+   // NEW WITH TEXT2
+   $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''};
+
+
+
+
+
 
    // CALL POSTSERVICE (commented out since not in video at 3:48...)
    // postService.getAll().success(function(data){
@@ -86,7 +100,20 @@ app.controller('mainController', function($scope, $rootScope, postService){
 
       postService.save($scope.newPost, function(){
          $scope.posts = postService.query(); // refresh post stream
-         $scope.newPost = {created_by: '', text: '', created_at: ''}; // clear new post
+
+
+
+
+         // OLD CODE
+         // $scope.newPost = {created_by: '', text: '', created_at: ''};
+         // clear new post
+
+         // NEW WITH TEXT2
+         $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''}; // clear new post
+
+
+
+
       });
    }; // end post
 

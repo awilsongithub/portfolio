@@ -1,20 +1,54 @@
 <div class="clearfix">
 
    <!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
+   <!-- <form ng-Submit="post()" ng-show="authenticated"> -->
+
+      <!-- THESE LINES ALREADY COMMENTED OUT -->
+     <!-- $scope.variables are available here -->
+     <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
+
+
+     <!-- <h4>{{current_user}} says</h4>   -->
+     <!-- <textarea  class="form-control" required maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+     <input class="btn submit-bt pull-right" type="submit" value="Chirp!" />
+   </form> -->
+
+
+   <!-- NEW WITH TEXT2  -->
    <form ng-Submit="post()" ng-show="authenticated">
      <!-- $scope.variables are available here -->
      <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
-     <h4>{{current_user}} says</h4>  <!-- replaces input field -->
+     <h4>{{current_user}}'s Projects'</h4>  <!-- replaces input field -->
      <textarea  class="form-control" required maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+
+     <textarea  class="form-control" required maxlength="600" rows="3" placeholder="Say something" ng-model="newPost.text2"></textarea>
+
      <input class="btn submit-bt pull-right" type="submit" value="Chirp!" />
    </form>
+
+
 
 <div id="post-stream">
   <h4>Chirp Feed</h4>
       <!-- POSTS APPEAR HERE  -->
       <!-- ng-repeat directive iterates posts and orders them -->
       <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
-         <p>{{post.text}}</p>
+         <h3>{{post.text}}</h3>
+
+
+
+
+         <!-- NEW ELEMENT TEXT2 -->
+         <p>{{post.text2}}</p>
+
+         <!--IMAGES IN AS IN COPYCHEF DIDN'T WORK MON 5PM...-->
+         <!-- <img id="recipe-main-image" class="materialboxed" src={{RecipeImage}}>  -->
+
+
+
+
+
+
          <small>Posted by @{{post.created_by}}</small>
          <!-- formatted timestamp with an ng filter -->
          <small class="pull-right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
