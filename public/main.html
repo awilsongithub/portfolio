@@ -32,6 +32,7 @@
   <h4>Chirp Feed</h4>
       <!-- POSTS APPEAR HERE  -->
       <!-- ng-repeat directive iterates posts and orders them -->
+      <!-- text after the "|" ("filter") is optional in ng-repeat -->
       <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
          <h3>{{post.text}}</h3>
 

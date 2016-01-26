@@ -1,6 +1,18 @@
+// ANATOMY OF ANGULAR
+// MODULE: highest level angualar object
+// ctrlrs, config, routes = children of module
+// CONTROLLERS: manage the scope object that is accessible
+// to the html mapped to that controller
+// $SCOPE: object carrying properties AND functions
+// FACTORY/SERVICE/PROVIDER: valid, parse, combine etc data
+
 // angular module construction named app, specifically chirpApp
+// ARGUMENTS = it's NAME, [dependencies]
+// INSTEAD OF A GLOBAL FUNCTION, polluting global namespace
 // [ ] holds dependencies for the app ngRoute, ngResource
 // these are script linked in index.html to cdn
+
+//
 var app = angular.module('chirpApp', ['ngRoute', 'ngResource']).run(function($rootScope, $http){
    // DECLARE $ROOTSCOPE VARIABLES.
    // ANGUULAR USES $ TO DENOTE PUBLIC/GLOBAL? OBJECTS USABLE ANYWHERE
@@ -33,8 +45,8 @@ app.config(function($routeProvider){
       controller: 'authController'
    })
    // signup
-   .when('/register', {
-      templateUrl: 'register.html',
+   .when('/signup', {
+      templateUrl: 'signup.html',
       controller: 'authController'
    });
 });
@@ -57,6 +69,8 @@ app.config(function($routeProvider){
 //    return factory; // has all posts data
 // });
 
+// FACTORY ARGUMENTS ARE 1) IT'S NAME 2) A FUNCTION
+
 app.factory('postService', function($resource){
    // using ngResource module takes endpoint api and creates many helper functions
    // if included in a controller.
@@ -64,6 +78,7 @@ app.factory('postService', function($resource){
 });
 
 // MAINCONTROLLER
+// IT'S ARGUMENTS 1) IT'S NAME 2) A FUNCTION
 // is a function attaching a model onto $scope
 // items passed with $scope are in the scope of the view templates
 app.controller('mainController', function($scope, $rootScope, postService){
@@ -78,6 +93,7 @@ app.controller('mainController', function($scope, $rootScope, postService){
    // $scope.newPost = {created_by: '', text: '', created_at: ''};
 
    // NEW WITH TEXT2
+   // DOES THIS JUST EMPTY THE INPUT FIELDS/PARAMS ONCE POSTED?
    $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''};
 
 

@@ -36,7 +36,8 @@ router.use('/posts', isAuthenticated);
 // 2) response object from server
 router.route('/posts')
 
-   // CREATE NEW POST
+   // CREATE? NEW POST ? OR DOES .POST IN MAINCONTROLLER DO IT?
+   // OR DOES ONE > ANGULAR MODEL, OTHER > DB?
    .post(function(req, res){
       //temp removed: res.send({message: 'TODO create a new post'});
       // req.params
