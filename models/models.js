@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 // CREATE SCHEMA SPECIFYING KEYS, DATA TYPES, DEFAULTS
 // var postSchema = new mongoose.Schema({
 //    text: String,
-//    created_by: String, // mod5 starts syas: should be changed to ObjectId, ref "User"
+//    created_by: String,
 //    created_at: {type: Date, default: Date.now}
 // });
 
@@ -15,11 +15,9 @@ var Schema = mongoose.Schema;
 var postSchema = new mongoose.Schema({
    text: String,
    text2: String,
-   created_by: String, // mod5 starts syas: should be changed to ObjectId, ref "User"
+   created_by: String,
    created_at: {type: Date, default: Date.now}
 });
-
-
 
 var userSchema = new mongoose.Schema({
    username: String,
@@ -31,19 +29,28 @@ var userSchema = new mongoose.Schema({
 mongoose.model('User', userSchema);
 mongoose.model('Post', postSchema);
 
-/////////////////////////////////
-// EXAMPLE COMPLEX SCHEMA      //
-/////////////////////////////////
+/////////////////////////////////////
+//  new postSchema for portfolio   //
+/////////////////////////////////////
 
-// var RecipeSchema = new mongoose.Schema ({
-//   Restaurant: String,
-//   NameOfDish: String,
-//   Tags: [String],
-//   Ingredients: [String],
-//   Directions: [String],
-//   PrepTime: String,
-//   CookTime: String,
-//   RecipeImage: String,
-//   SourceName: String,
-//   SourceLink: String
+// var postSchema = new mongoose.Schema({
+// Project: String,
+// Description: String,
+// Tags: [String],
+// SiteLink: String,
+// CardImage: String,
+// CardCaption: String,
+// Image1: String,
+// Image1Caption: String,
+// Image2: String,
+// Image2Caption: String,
+// Image3: String,
+// Image3Caption: String,
+// Image4: String,
+// Image4Caption: String,
+// Description1: String,
+// Description2: String,
+// Testimonial: String,
+// created_by: String,
+// created_at: {type: Date, default: Date.now}
 // });

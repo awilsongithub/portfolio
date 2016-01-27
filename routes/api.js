@@ -44,16 +44,13 @@ router.route('/posts')
       var post = new Post(); // post document creation with param DATA
       post.text = req.body.text;
 
-
-
       // NEW FIELD TEXT2
       post.text2 = req.body.text2;
-      // DID REQ PARAMS GET THIS FAR ?
+
+      // DID REQ PARAMS GET THIS FAR ? no it didnt'.
       console.log(req.params);
-
-
-
-
+      // test if form calls this OR MAINCONTROLLER function?
+      console.log('posted to route');
 
       post.created_by = req.body.created_by;
       post.save(function(err, post) { // saving to db here

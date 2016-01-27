@@ -8,21 +8,21 @@
     </div>
     </div>
 
+
+   <!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
+   <!-- NEW WITH TEXT2  -->
+   <form ng-Submit="post()" ng-show="authenticated">
+     <!-- $scope.variables are available here -->
+     <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
+     <h4>{{current_user}}'s Projects'</h4>  <!-- replaces input field -->
+     <textarea required maxlength="200" rows="1" placeholder="Say something" ng-model="newPost.text"></textarea>
+
+     <textarea required maxlength="600" rows="2" placeholder="Say something" ng-model="newPost.text2"></textarea>
+
+     <input type="submit" value="Chirp!" />
+   </form>
+
 </div> <!-- END HERO IMAGE AREA -->
-
-
-<!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
-<!-- NEW WITH TEXT2  -->
-<form ng-Submit="post()" ng-show="authenticated">
-  <!-- $scope.variables are available here -->
-  <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
-  <h4>{{current_user}}'s Projects'</h4>  <!-- replaces input field -->
-  <textarea required maxlength="200" rows="1" placeholder="Say something" ng-model="newPost.text"></textarea>
-
-  <textarea required maxlength="600" rows="2" placeholder="Say something" ng-model="newPost.text2"></textarea>
-
-  <input type="submit" value="Chirp!" />
-</form>
 
 
 

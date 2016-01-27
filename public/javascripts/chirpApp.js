@@ -72,7 +72,8 @@ app.config(function($routeProvider){
 // FACTORY ARGUMENTS ARE 1) IT'S NAME 2) A FUNCTION
 
 app.factory('postService', function($resource){
-   // using ngResource module takes endpoint api and creates many helper functions
+   // using ngResource module takes endpoint api
+   // and creates many helper functions
    // if included in a controller.
    return $resource('/api/posts/:id');
 });
@@ -85,21 +86,12 @@ app.controller('mainController', function($scope, $rootScope, postService){
    // attach variables onto our $scope (post objects, posts array)
    $scope.posts = postService.query(); // query is get req
 
-
-
-
-
    // ORIGINAL CODE
    // $scope.newPost = {created_by: '', text: '', created_at: ''};
 
    // NEW WITH TEXT2
    // DOES THIS JUST EMPTY THE INPUT FIELDS/PARAMS ONCE POSTED?
    $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''};
-
-
-
-
-
 
    // CALL POSTSERVICE (commented out since not in video at 3:48...)
    // postService.getAll().success(function(data){
@@ -111,14 +103,14 @@ app.controller('mainController', function($scope, $rootScope, postService){
    // INSTEAD OF USERNAME VALUE FROM FORM PARAMETERS
    // COMMENTED OUT OLD $SCOPE.POST FUNCTION PER MOD 5 NEW ONE (BELOW)
    $scope.post = function() {
+      // test does form pst here or api.js
+      console.log('posted to controller');
+
       $scope.newPost.created_by = $rootScope.current_user;
       $scope.newPost.created_at = Date.now();
 
       postService.save($scope.newPost, function(){
          $scope.posts = postService.query(); // refresh post stream
-
-
-
 
          // OLD CODE
          // $scope.newPost = {created_by: '', text: '', created_at: ''};
@@ -126,9 +118,6 @@ app.controller('mainController', function($scope, $rootScope, postService){
 
          // NEW WITH TEXT2
          $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''}; // clear new post
-
-
-
 
       });
    }; // end post

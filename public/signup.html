@@ -1,10 +1,10 @@
 <!-- REGISTER FORM PARTIAL                -->
 <!-- register() called on form submission -->
 
-<form class="form-auth" ng-submit="register()">
+<form ng-submit="register()">
   <h2>Signup</h2>
-  <p class="text-warning">{{error_message}}</p>
-  <input type="username" ng-model="user.username" placeholder="Username" class="form-control"><br>
-  <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-  <input type="submit" value="Signup" class="btn btn-primary" />
+  <p>{{error_message}}</p>
+  <input type="username" ng-model="user.username" placeholder="Username"><br>
+  <input type="password" ng-model="user.password" placeholder="Password"><br>
+  <input type="submit" value="Signup"/>
 </form>
