@@ -6,7 +6,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Post = mongoose.model('Post');
+var Post = require('../models/models').Post;
 
 // AUTHENTICATION
 // LOCK UP POST ROUTES BUT NOT GETS
@@ -39,26 +39,53 @@ router.route('/posts')
    // CREATE? NEW POST ? OR DOES .POST IN MAINCONTROLLER DO IT?
    // OR DOES ONE > ANGULAR MODEL, OTHER > DB?
    .post(function(req, res){
+      console.log(req);
       //temp removed: res.send({message: 'TODO create a new post'});
       // req.params
-      var post = new Post(); // post document creation with param DATA
-      post.text = req.body.text;
+      var post = {}; // post document creation with param DATA
 
-      // NEW FIELD TEXT2
-      post.text2 = req.body.text2;
+      // OLD 2 FIELDS
+      // post.text = req.body.text;
+      // post.text2 = req.body.text2;
+
+
+      // NEW ALL FIELDS
+      post.project = req.body.project;
+      post.displayOrder = parseInt(req.body.displayOrder);
+      post.description = req.body.description;
+      post.tags = req.body.tags;
+      post.siteLink = req.body.siteLink;
+      post.cardImage = req.body.cardImage;
+      post.cardCaption = req.body.cardCaption;
+      post.image1 = req.body.image1;
+      post.image1Caption = req.body.image1Caption;
+      post.image2 = req.body.image2;
+      post.image2Caption = req.body.image2Caption;
+      post.image3 = req.body.image3;
+      post.image3Caption = req.body.image3Caption;
+      post.image4 = req.body.image4;
+      post.image4Caption = req.body.image4Caption;
+      post.description1 = req.body.description1;
+      post.description2 = req.body.description2;
+      post.testimonial = req.body.testimonial;
+
+      // THIS COMES FROM SESSION
+      post.created_by = req.body.created_by;
+
 
       // DID REQ PARAMS GET THIS FAR ? no it didnt'.
-      console.log(req.params);
+      //console.log(req);
       // test if form calls this OR MAINCONTROLLER function?
       console.log('posted to route');
 
-      post.created_by = req.body.created_by;
-      post.save(function(err, post) { // saving to db here
+      Post.create(post, function(err, post) { // saving to db here
          if (err) {
-            return res.send(500, err);
+            console.log(err);
+            //return res.send(500, err);
          }
          return res.json(post);
       });
+      //post.save();
    })
 
    // GET ALL POSTS
@@ -98,8 +125,36 @@ router.route('/posts')
             if (err){
                res.send(err);
             }
+            // OLD 2 FIELDS
+            // post.created_by = req.body.created_by;
+            // post.text = req.body.text;
+
+            // NEW ALL FIELDS
+            post.project = req.body.project;
+            post.displayOrder = parseInt(req.body.displayOrder);
+            post.description = req.body.description;
+            post.tags = req.body.tags;
+            post.siteLink = req.body.siteLink;
+            post.cardImage = req.body.cardImage;
+            post.cardCaption = req.body.cardCaption;
+            post.image1 = req.body.image1;
+            post.image1Caption = req.body.image1Caption;
+            post.image2 = req.body.image2;
+            post.image2Caption = req.body.image2Caption;
+            post.image3 = req.body.image3;
+            post.image3Caption = req.body.image3Caption;
+            post.image4 = req.body.image4;
+            post.image4Caption = req.body.image4Caption;
+            post.description1 = req.body.description1;
+            post.description2 = req.body.description2;
+            post.testimonial = req.body.testimonial;
+
+            // THIS COMES FROM SESSION
             post.created_by = req.body.created_by;
-            post.text = req.body.text;
+
+
+
+
             post.save(function(err, post){
                if (err){
                   res.send(err);

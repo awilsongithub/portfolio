@@ -91,7 +91,15 @@ app.controller('mainController', function($scope, $rootScope, postService){
 
    // NEW WITH TEXT2
    // DOES THIS JUST EMPTY THE INPUT FIELDS/PARAMS ONCE POSTED?
-   $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''};
+   // $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''};
+
+
+
+   // NEWEST WITH ALL FIELDS
+   $scope.newPost = {project: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
+
+
+
 
    // CALL POSTSERVICE (commented out since not in video at 3:48...)
    // postService.getAll().success(function(data){
@@ -117,7 +125,15 @@ app.controller('mainController', function($scope, $rootScope, postService){
          // clear new post
 
          // NEW WITH TEXT2
-         $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''}; // clear new post
+         // $scope.newPost = {created_by: '', text: '', text2: '', created_at: ''}; // clear new post
+
+
+         // NEWEST WITH ALL FIELDS
+         $scope.newPost = {project: '', displayOrder: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
+
+
+
+
 
       });
    }; // end post
