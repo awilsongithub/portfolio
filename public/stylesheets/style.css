@@ -37,9 +37,11 @@ footer {
 	height: px;
 	background-color: #202020;
 	color: white;
+	line-height: 1em;
+	margin-
 }
 footer .fa {
-	font-size: 2em;
+	font-size: 1.25em;
 	color: white;
 	padding-right: .25em;
    vertical-align: middle;
@@ -47,6 +49,7 @@ footer .fa {
 }
 footer li {
 	list-style-type: one;
+	padding-bottom: 0px;
 }
 #three-column {
 	padding: 0px 25px 0px 25px;
@@ -171,7 +174,7 @@ SINGLE WORK SAMPLE PAGE
   padding-top: 0px;
   background-color: #202020;
   color: white;
-  
+
 }
 #recipe-main-image {
   width: 100%;
