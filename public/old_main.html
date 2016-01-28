@@ -1,0 +1,110 @@
+
+<!-- HERO IMAGE AREA FROM COPYCHEF STARTER  --->
+<div class="section" id="hero-image">
+    <div class="row">
+      <div class="col l7">
+        <h2>Junior Front End Developer</h2>
+        <h5>HTML5, CSS3, Javascript, MEAN Stack...</h5>
+    </div>
+    </div>
+
+</div> <!-- END HERO IMAGE AREA -->
+
+
+<!---------------------------------------------------------->
+<!-- INPUT FORM W/ NG-SHOW/HIDE: CALLS POST() IN API.JS   -->
+<!---------------------------------------------------------->
+<form ng-Submit="post()" ng-show="authenticated">
+  <!-- $scope.variables are available here -->
+  <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
+  <h4>{{current_user}}'s Projects'</h4>  <!-- replaces input field -->
+
+      <!-- OLD WAS TEXT AND TEXT2 ONLY -->
+      <!-- <textarea required placeholder="text" ng-model="newPost.text"></textarea>
+      <textarea required placeholder="text2" ng-model="newPost.text2"></textarea> -->
+
+      <!-- NEW ALL FIELDS  -->
+     <textarea required placeholder="Project Name" ng-model="newPost.project"></textarea>
+     <input type='number' placeholder="In what order should this work sample appear (ie 1, 2...)" ng-model="newPost.displayOrder">
+     <textarea required placeholder="description" ng-model="newPost.description"></textarea>
+     <textarea required placeholder="Technologies used (comma separated)" ng-model="newPost.tags"></textarea>
+     <textarea placeholder="Live site url (ie http://...)" ng-model="newPost.siteLink" type='url' required pattern="https?://.+"></textarea>
+     <textarea required placeholder="Small preview image (url)" ng-model="newPost.cardImage"></textarea>
+     <textarea required placeholder="cardCaption" ng-model="newPost.cardCaption"></textarea>
+     <textarea required placeholder="image1 url" ng-model="newPost.image1"></textarea>
+     <textarea required placeholder="image1Caption" ng-model="newPost.image1Caption"></textarea>
+     <textarea  placeholder="image2 url" ng-model="newPost.image2"></textarea>
+     <textarea  placeholder="image2Caption" ng-model="newPost.image2Caption"></textarea>
+     <textarea  placeholder="image3 url" ng-model="newPost.image3"></textarea>
+     <textarea  placeholder="image3Caption" ng-model="newPost.image3Caption"></textarea>
+     <textarea  placeholder="image4 url" ng-model="newPost.image4"></textarea>
+     <textarea  placeholder="image4Caption" ng-model="newPost.image4Caption"></textarea>
+     <textarea required placeholder="description1" ng-model="newPost.description1"></textarea>
+     <textarea  placeholder="description2" ng-model="newPost.description2"></textarea>
+     <textarea  placeholder="testimonial" ng-model="newPost.testimonial"></textarea>
+     <!-- created_by and created_at automatically populated  -->
+     <input type="submit" value="Save" />
+</form>
+
+
+
+
+<div id="post-stream">
+      <!-- POSTS APPEAR HERE  -->
+      <!-- ng-repeat directive iterates posts and orders them -->
+      <!-- text after the "|" ("filter") is optional in ng-repeat -->
+
+      <!-- OLD  -->
+      <!-- <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'"> -->
+         <!-- <h3>{{post.text}}</h3>
+         <p>{{post.text2}}</p> -->
+
+
+      <!-- NEW ALL FIELDS  -->
+      <div class="post" ng-repeat="post in posts | orderBy:'displayOrder'" ng-class-odd="'odd'" ng-class-even="'even'">
+         <h3>{{post.project}}</h3>
+            <p>{{post.description}}</p>
+            <p>{{post.tags}}</p>
+            <p>{{post.siteLink}}</p>
+            <p>{{post.cardImage}}</p>
+            <p>{{post.cardCaption}}</p>
+            <p>{{post.image1}}</p>
+            <p>{{post.image1Caption}}</p>
+            <p>{{post.image2}}</p>
+            <p>{{post.image2Caption}}</p>
+            <p>{{post.image3}}</p>
+            <p>{{post.image3Caption}}</p>
+            <p>{{post.image4}}</p>
+            <p>{{post.image4Caption}}</p>
+            <p>{{post.description1}}</p>
+            <p>{{post.description2}}</p>
+            <p>{{post.testimonial}}</p>
+
+            <small>Posted by @{{post.created_by}}</small>
+            <!-- formatted timestamp with an ng filter -->
+            <small>{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+
+            <!--IMAGES IN AS IN COPYCHEF DIDN'T WORK MON 5PM...-->
+            <!-- <img id="recipe-main-image" class="materialboxed" src={{RecipeImage}}>  -->
+      </div>
+</div> <!-- end post-stream -->
+
+
+
+
+<!---------------------------------->
+<!-- REMOVED CODE                 -->
+<!---------------------------------->
+
+<!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
+<!-- <form ng-Submit="post()" ng-show="authenticated"> -->
+
+   <!-- THESE LINES ALREADY COMMENTED OUT -->
+  <!-- $scope.variables are available here -->
+  <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
+
+
+  <!-- <h4>{{current_user}} says</h4>   -->
+  <!-- <textarea  class="form-control" required maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+  <input class="btn submit-bt pull-right" type="submit" value="Chirp!" />
+</form> -->

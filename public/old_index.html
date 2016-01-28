@@ -13,7 +13,6 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
     <script src="javascripts/chirpApp.js"></script>
    <!-- Materialize CSS and JS + Google Icon font -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
    <!-- Compiled and minified CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
    <!-- Compiled and minified JavaScript -->
@@ -25,19 +24,18 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
   </head>
 
 
+
+
   <!-- map body to angular module "app" -->
-  <!-- <body ng-app="chirpApp"> -->
   <body ng-app="chirpApp">
+     <div class="container">
 
-     <!-- <div class="container"> -->
 
-   <!--------------------->
-   <!--       NAV       -->
-   <!--------------------->
+   <!-- NAV -->
    <nav>
-      <div class="wrapper">
+      <div class="nav-wrapper">
          <a href="#" class="brand-logo">Adam Wilson</a>
-         <ul id="nav-mobile" class="right hide-on-small-and-down">
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <!-- <p class="">Front End Web Developer</p> -->
 
             <!-- HIDE WHEN AUTHENTICATED -->
@@ -52,49 +50,15 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
    </nav>
 
 
-   <!-------------------------------------------->
-   <!-- NG-VIEW: PARTIALS APPEAR HERE PER URL  -->
-   <!-------------------------------------------->
+
+
+
+
+   <!-- PARTIALS DIV  -->
    <div class="">
       <div ng-view></div>
    </div>
 
-
-  <!--------------------------->
-  <!--       FOOTER          -->
-  <!--------------------------->
-  <footer>
-     <div class="wrapper">
-        <div class="row">
-
-           <!-- ABOUT -->
-           <div class="col s12 m6 l6">
-             <h5>About Adam</h5>
-             <p>Adam is a Chicago-based junior developer with an Information Systems BA and years of experience as a webmaster, office manager and communications coordinator. I bring a passion for coding, learning, visual design, and helping others.</p>
-           </div>
-
-           <!-- EMPTY -->
-           <div class="col s12 m3 l3">
-           </div>
-
-           <!-- LINKS -->
-           <div class="col s12 m3 l3">
-             <h5>About Adam</h5>
-             <ul>
-                <li><p><i class="fa fa-github"></i> Github</p></li>
-                <li><p><i class="fa fa-linkedin-square"></i> LinkedIn</p></li>
-                <li><p><i class="material-icons">schedule</i> General Assembly</p></li>
-                <li><a href="#!"><i class="fa fa-github"></i>    About</a></li>
-                <li><a href="#!"><p><i class="fa fa-linkedin-square"></i> Portfolio</p></a></li>
-                <li><a href="#!"><p><i class="fa fa-file-text"></i> Resume</p></a></li>
-                <li><a href="#!"><i class="material-icons">schedule</i> Contact</p></a></li>
-             </ul>
-           </div>
-        </div>
-     </div>
-  </footer>
-
-
-      <!-- </div> <!-- end container --> -->
+      </div> <!-- end container -->
   </body>
 </html>

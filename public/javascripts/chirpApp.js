@@ -48,6 +48,11 @@ app.config(function($routeProvider){
    .when('/signup', {
       templateUrl: 'signup.html',
       controller: 'authController'
+   })
+   // project
+   .when('/project', {
+      templateUrl: 'project.html',
+      controller: 'mainController'
    });
 });
 

@@ -1,18 +1,9 @@
+<!-- PARTIALS LIKE MAIN JUST NEED THE ELEMENTS THEY NEED
+INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 
-<!-- HERO IMAGE AREA FROM COPYCHEF STARTER  --->
-<div class="section" id="hero-image">
-    <div class="row">
-      <div class="col l7">
-        <h2>Junior Front End Developer</h2>
-        <h5>HTML5, CSS3, Javascript, MEAN Stack...</h5>
-    </div>
-    </div>
-
-</div> <!-- END HERO IMAGE AREA -->
-
-
-<!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
-<!-- NEW WITH TEXT2  -->
+<!---------------------------------------------------------->
+<!-- INPUT FORM W/ NG-SHOW/HIDE: CALLS POST() IN API.JS   -->
+<!---------------------------------------------------------->
 <form ng-Submit="post()" ng-show="authenticated">
   <!-- $scope.variables are available here -->
   <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
@@ -23,7 +14,6 @@
       <textarea required placeholder="text2" ng-model="newPost.text2"></textarea> -->
 
       <!-- NEW ALL FIELDS  -->
-
      <textarea required placeholder="Project Name" ng-model="newPost.project"></textarea>
      <input type='number' placeholder="In what order should this work sample appear (ie 1, 2...)" ng-model="newPost.displayOrder">
      <textarea required placeholder="description" ng-model="newPost.description"></textarea>
@@ -43,70 +33,161 @@
      <textarea  placeholder="description2" ng-model="newPost.description2"></textarea>
      <textarea  placeholder="testimonial" ng-model="newPost.testimonial"></textarea>
      <!-- created_by and created_at automatically populated  -->
-
-
-  <input type="submit" value="Save" />
+     <input type="submit" value="Save" />
 </form>
 
-
-
-
-<div id="post-stream">
-      <!-- POSTS APPEAR HERE  -->
-      <!-- ng-repeat directive iterates posts and orders them -->
-      <!-- text after the "|" ("filter") is optional in ng-repeat -->
-
-      <!-- OLD  -->
-      <!-- <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'"> -->
-         <!-- <h3>{{post.text}}</h3>
-         <p>{{post.text2}}</p> -->
-
-
-      <!-- NEW ALL FIELDS  -->
-      <div class="post" ng-repeat="post in posts | orderBy:'displayOrder'" ng-class-odd="'odd'" ng-class-even="'even'">
-         <h3>{{post.project}}</h3>
-            <p>{{post.description}}</p>
-            <p>{{post.tags}}</p>
-            <p>{{post.siteLink}}</p>
-            <p>{{post.cardImage}}</p>
-            <p>{{post.cardCaption}}</p>
-            <p>{{post.image1}}</p>
-            <p>{{post.image1Caption}}</p>
-            <p>{{post.image2}}</p>
-            <p>{{post.image2Caption}}</p>
-            <p>{{post.image3}}</p>
-            <p>{{post.image3Caption}}</p>
-            <p>{{post.image4}}</p>
-            <p>{{post.image4Caption}}</p>
-            <p>{{post.description1}}</p>
-            <p>{{post.description2}}</p>
-            <p>{{post.testimonial}}</p>
-
-            <small>Posted by @{{post.created_by}}</small>
-            <!-- formatted timestamp with an ng filter -->
-            <small>{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
-
-            <!--IMAGES IN AS IN COPYCHEF DIDN'T WORK MON 5PM...-->
-            <!-- <img id="recipe-main-image" class="materialboxed" src={{RecipeImage}}>  -->
+<!--------------------->
+<!--  HERO IMAGE     -->
+<!--------------------->
+<div class="section" id="hero-image" ng-hide="authenticated">
+    <div class="row">
+       <div id="hero-text">
+        <h3 id="hero-heading">Junior Front End Developer</h3>
+        <h5 id="hero-subheading">HTML5, CSS3, Javascript, MEAN Stack...</h5>
       </div>
-</div> <!-- end post-stream -->
+    </div>
+</div> <!-- END HERO IMAGE AREA -->
+
+
+<!--------------------->
+<!--  POST CARDS     -->
+<!--------------------->
+<section id='portfolio'>
+   <div class="wrapper">
+
+   <h3>Portfolio</h3>
+   <div class="row">
+      <a href="#/project">
+        <div id="card-column" class="col s12 m6 l3">
+          <div class="card medium hoverable"> <!-- add "large"? -->
+            <div class="card-image">
+              <img src="media/copychef_card.png">
+            </div>
+            <div class="card-content">
+               <h5>CopyChef</h5>
+               <p>An API for delicious copycat recipes.</p>
+            </div>
+            <div class="card-action">
+              <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
+            </div>
+          </div>
+        </div>
+     </a>
+     <a href="#/project">
+       <div id="card-column" class="col s12 m6 l3">
+        <div class="card medium hoverable"> <!-- add "large"? -->
+          <div class="card-image">
+             <img src="media/copychef_card.png">
+          </div>
+          <div class="card-content">
+              <h5>CopyChef</h5>
+              <p>An API for delicious copycat recipes.</p>
+          </div>
+          <div class="card-action">
+             <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
+          </div>
+        </div>
+       </div>
+   </a>
+   <a href="#/project">
+     <div id="card-column" class="col s12 m6 l3">
+       <div class="card medium hoverable"> <!-- add "large"? -->
+        <div class="card-image">
+          <img src="media/copychef_card.png">
+        </div>
+        <div class="card-content">
+            <h5>CopyChef</h5>
+            <p>An API for delicious copycat recipes.</p>
+        </div>
+        <div class="card-action">
+          <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
+        </div>
+       </div>
+     </div>
+  </a>
+  <a href="#/project">
+   <div id="card-column" class="col s12 m6 l3">
+      <div class="card medium hoverable"> <!-- add "large"? -->
+        <div class="card-image">
+          <img src="media/copychef_card.png">
+        </div>
+        <div class="card-content">
+           <h5>CopyChef</h5>
+           <p>An API for delicious copycat recipes.</p>
+        </div>
+        <div class="card-action">
+          <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
+        </div>
+      </div>
+      </div>
+    </a>
+  </div> <!-- end row -->
+  </div>
+</section> <!-- end portfolio section -->
 
 
 
+<!--------------------------------->
+<!-- ABOUT, SKILLS, TESTIMONIALS -->
+<!--------------------------------->
+<section ng-hide="authenticated">
+  <div class="wrapper">
+  <div class="row">
 
-<!---------------------------------->
-<!-- REMOVED CODE                 -->
-<!---------------------------------->
+     <!--   ABOUT   -->
+     <div id="three-column" class="col s12 m6 l4">
+        <h4>About</h4>
+          <p>Adam is a Chicago-based junior developer with an Information Systems BA and years of experience as a webmaster, office manager and communications coordinator. He has a passion for coding, learning, visual design, and helping others.</p>
+    </div>
 
-<!-- INPUT FORM: AUTHENTICATION SENSITIVE W/ NG-SHOW/HIDE -->
-<!-- <form ng-Submit="post()" ng-show="authenticated"> -->
+    <!--   SKILLS  -->
+  <div class="col s12 m6 l4 " id="three-column" >
+     <h4>Skills</h4>
+     <h5>Front End</h5>
+     <ul>
+        <li>HTML5</li>
+        <li>CSS/LESS</li>
+        <li>Javascript, JQuery</li>
+        <li>AngularJS</li>
+        <li>Bootstrap, Materialize</li>
+     </ul>
+     <h5>Full Stack</h5>
+     <ul>
+        <li>HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</li>
+        <li>CSS/LESS</li>
+        <li>Javascript & JQuery</li>
+        <li>AngularJS</li>
+        <li>Front-end frameworks (Materialize, Bootstrap)</li>
+     </ul>
+     <h5>General Tech</h5>
+     <ul>
+        <li>HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</li>
+        <li>CSS/LESS</li>
+        <li>Javascript & JQuery</li>
+        <li>AngularJS</li>
+        <li>Front-end frameworks (Materialize, Bootstrap)</li>
+     </ul>
+  </div>
 
-   <!-- THESE LINES ALREADY COMMENTED OUT -->
-  <!-- $scope.variables are available here -->
-  <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
+  <!--   TESTIMONIALS  -->
+  <div class="col s12 m6 l4" id="three-column" >
+     <h4>Testimonials</h4>
+      <p>
+      This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag.
+      </p>
+      <p class="right">- Megan Coleman, Megan Coleman Design</p>
+      <p>
+      This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag.
+      </p>
+      <p class="right">- Megan Coleman, Megan Coleman Design</p>
+  </div>
+
+   </div>
+</div>
+</section>
 
 
-  <!-- <h4>{{current_user}} says</h4>   -->
-  <!-- <textarea  class="form-control" required maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
-  <input class="btn submit-bt pull-right" type="submit" value="Chirp!" />
-</form> -->
+
+      <!-- </div> <!-- end container --> -->
+  <!-- </body>
+</html> -->
