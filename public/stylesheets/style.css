@@ -15,8 +15,7 @@ div {
 	min-height: 10px;
 }
 .wrapper {
-	padding-left: 4em;
-	padding-right: 4em;
+	padding: 30px 75px 30px 75px;
 }
 input {
   height: 2em;
@@ -26,6 +25,13 @@ input {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
+ul, li {
+	display: list-item;
+	list-style-type: disc;
+	padding-bottom: .5em;
+	line-height: normal;
+	margin-left: .5em;
+}
 footer {
 	padding-top: 25px;
 	height: px;
@@ -33,8 +39,21 @@ footer {
 	color: white;
 }
 footer .fa {
-	font-size: 3em;
+	font-size: 2em;
 	color: white;
+	padding-right: .25em;
+   vertical-align: middle;
+
+}
+footer li {
+	list-style-type: one;
+}
+#three-column {
+	padding: 0px 25px 0px 25px;
+}
+blockquote {
+  border-left: 5px solid #747474; /* Just change the color value and that's it*/
+  /*background-color: red;*/
 }
 /*container {   DIDN'T WORK...
 	width: 85%;
@@ -80,6 +99,9 @@ HERO DIV
 RECIPE CARDS
 ===================================
 */
+.post-stream {
+
+}
 #portfolio {
 	background-color: #202020;
 	color: white;
@@ -139,17 +161,21 @@ FORM ELEMENTS
 SINGLE WORK SAMPLE PAGE
 ===================================
 */
-#recipe-image-section {
+#main-image-section {
   background-color: #FAF9F5;
-  padding-top: 0px;
+  padding-top: 25px;
   padding-bottom: 0px;
 }
 #recipe-heading {
   text-align: center;
+  padding-top: 0px;
+  background-color: #202020;
+  color: white;
+  
 }
 #recipe-main-image {
   width: 100%;
-  max-height: 350px;
+  /*max-height: 350px;*/
   overflow: hidden;
   object-fit: cover;
 }
@@ -157,13 +183,17 @@ SINGLE WORK SAMPLE PAGE
     background-color: #757575;
     color: white;
 }
-.directions-list li {
-  font-size: 1.5em;
-  font-weight: thin;
+ul, li {
+	display: list-item;
+	list-style-type: disc;
+	padding-bottom: .5em;
+	margin-left: .5em;
+  /*font-size: 1.5em;*/
+  /*font-weight: thin;
   line-height: 120%;
   padding-top: .7em;
   padding-bottom: .7em;
-  border-bottom: dashed 2px #e5e2db;
+  border-bottom: dashed 2px #e5e2db;*/
 }
 .list-header {
     border-bottom: 1px #e5e2db;
@@ -195,3 +225,11 @@ OTHER STYLING
 MEDIA QUERIES
 ===================================
 */
+
+/*HOW OVERIDE THIS WHICH CENTERS BRAND LOGO AT MEDIUM
+@media only screen and (max-width: 980px)
+nav .brand-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}*/

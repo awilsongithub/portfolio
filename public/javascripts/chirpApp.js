@@ -96,7 +96,7 @@ app.controller('mainController', function($scope, $rootScope, postService){
 
 
    // NEWEST WITH ALL FIELDS
-   $scope.newPost = {project: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
+   $scope.newPost = {project: '', displayOrder: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
 
 
 
