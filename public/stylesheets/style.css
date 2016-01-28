@@ -102,9 +102,9 @@ HERO DIV
 RECIPE CARDS
 ===================================
 */
-.post-stream {
+/*.post-stream {
 
-}
+}*/
 #portfolio {
 	background-color: #202020;
 	color: white;
@@ -143,7 +143,7 @@ RECIPE CARDS
 FORM ELEMENTS
 ===================================
 */
-#standard-form {
+form {
     width: 25em;
     max-width: 80%;
     margin: auto;

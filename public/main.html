@@ -7,7 +7,8 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 <form ng-Submit="post()" ng-show="authenticated">
   <!-- $scope.variables are available here -->
   <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
-  <h4>{{current_user}}'s Projects'</h4>  <!-- replaces input field -->
+  <!-- <h4>{{current_user}}'s Projects'</h4>   -->
+  <h4>Add Project</h4>
 
       <!-- OLD WAS TEXT AND TEXT2 ONLY -->
       <!-- <textarea required placeholder="text" ng-model="newPost.text"></textarea>
@@ -54,74 +55,32 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 <!--------------------->
 <section id='portfolio'>
    <div class="wrapper">
+      <h3>Portfolio</h3>
+      <div class="row">
 
-   <h3>Portfolio</h3>
-   <div class="row">
-      <a href="#/project">
-        <div id="card-column" class="col s12 m6 l3">
-          <div class="card medium hoverable"> <!-- add "large"? -->
-            <div class="card-image">
-              <img src="media/copychef_card.png">
-            </div>
-            <div class="card-content">
-               <h5>CopyChef</h5>
-               <p>An API for delicious copycat recipes.</p>
-            </div>
-            <div class="card-action">
-              <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
-            </div>
-          </div>
-        </div>
-     </a>
-     <a href="#/project">
-       <div id="card-column" class="col s12 m6 l3">
-        <div class="card medium hoverable"> <!-- add "large"? -->
-          <div class="card-image">
-             <img src="media/copychef_card.png">
-          </div>
-          <div class="card-content">
-              <h5>CopyChef</h5>
-              <p>An API for delicious copycat recipes.</p>
-          </div>
-          <div class="card-action">
-             <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
-          </div>
-        </div>
-       </div>
-   </a>
-   <a href="#/project">
-     <div id="card-column" class="col s12 m6 l3">
-       <div class="card medium hoverable"> <!-- add "large"? -->
-        <div class="card-image">
-          <img src="media/copychef_card.png">
-        </div>
-        <div class="card-content">
-            <h5>CopyChef</h5>
-            <p>An API for delicious copycat recipes.</p>
-        </div>
-        <div class="card-action">
-          <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
-        </div>
-       </div>
-     </div>
-  </a>
-  <a href="#/project">
-   <div id="card-column" class="col s12 m6 l3">
-      <div class="card medium hoverable"> <!-- add "large"? -->
-        <div class="card-image">
-          <img src="media/copychef_card.png">
-        </div>
-        <div class="card-content">
-           <h5>CopyChef</h5>
-           <p>An API for delicious copycat recipes.</p>
-        </div>
-        <div class="card-action">
-          <p>Express, MongoDB, JQuery, Handlebars, Passport, Materialize, Heroku</p>
-        </div>
-      </div>
-      </div>
-    </a>
-  </div> <!-- end row -->
+         <!-- <div class="post" ng-repeat="post in posts | orderBy:'displayOrder'"> -->
+         <div class="" ng-repeat="post in posts | orderBy:'displayOrder'">
+
+            <a href="#/project/{{_id}}"> <!-- MAY UPDATE TO "/#project/{{_id}}" & TAKE ID FROM CURRENT POST? -->
+              <div id="card-column" class="col s12 m6 l3">
+                <div class="card medium hoverable"> <!-- add "large"? -->
+                  <div class="card-image">
+                    <img src="{{post.cardImage}}">
+                  </div>
+                  <div class="card-content">
+                     <h5>{{post.project}}</h5>
+                     <p>{{post.description}}</p>
+                  </div>
+                  <div class="card-action">
+                    <p>{{post.tags}}</p>
+                  </div>
+                </div>
+              </div>
+           </a>
+
+
+        </div> <!-- end posts -->
+     </div> <!-- end row -->
   </div>
 </section> <!-- end portfolio section -->
 
