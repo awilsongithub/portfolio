@@ -15,12 +15,17 @@ div {
 	min-height: 10px;
 }
 .wrapper {
-	padding: 30px 75px 30px 75px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 5%;
+	padding-right: 5%;
+	 /*75px 30px 75px;*/
 }
 input {
   height: 2em;
   width: 100%;
   font-size: 1.5em;
+  padding-bottom: .5em;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -37,26 +42,32 @@ footer {
 	height: px;
 	background-color: #202020;
 	color: white;
-	line-height: 1em;
-	margin-
+	line-height: 1.5em;
+   border-top: 1px solid #e6b800;
 }
-footer .fa {
-	font-size: 1.25em;
+footer .fa ul a {
+	font-size: 1.5em;
 	color: white;
 	padding-right: .25em;
    vertical-align: middle;
 
 }
-footer li {
-	list-style-type: one;
-	padding-bottom: 0px;
-}
+/*footer li, a {
+	list-style-type: none;
+	font-size: 1.25em;
+    line-height: 2em;
+	/*padding-bottom: 0px;*/
+}*/
 #three-column {
 	padding: 0px 25px 0px 25px;
 }
 blockquote {
   border-left: 5px solid #747474; /* Just change the color value and that's it*/
   /*background-color: red;*/
+}
+.align-right {
+	text-align: right;
+	font-weight: 500;
 }
 /*container {   DIDN'T WORK...
 	width: 85%;
@@ -69,8 +80,9 @@ NAV
 
 nav {
 	padding-top: 0px;
-	height: 85px;
+	height: 100px;
 	background-color: #202020;
+	border-bottom: 1px solid #e6b800;
 }
 
 
@@ -88,7 +100,9 @@ HERO DIV
 }
 #hero-image {
 	/*81, 45, 168,*/
-	background-image: url(../media/workspace.jpg);
+	background:
+	linear-gradient(rgba(99, 92, 36, 0.5), rgba(0, 0, 0, 0.7)), url(../media/workspace.jpg);
+	/*background: rgba(70, 72, 82, 0.3);*/
 	/*linear-gradient(rgba(40, 53, 147, 0.3), rgba(0, 0, 0, 0.5)), url(../media/workspace.jpg);*/
 	 /*background-color: rgba(81, 45, 168, .5);*/
 	background-size: cover;
@@ -106,8 +120,8 @@ RECIPE CARDS
 
 }*/
 #portfolio {
-	background-color: #202020;
-	color: white;
+	/*background-color: #202020;*/
+	/*color: white;*/
 }
 .card {
     min-height: 460px;
@@ -119,6 +133,9 @@ RECIPE CARDS
   background: rgba(81, 45, 168, .9);
   width: 100%;
   /*min-height: 300px;*/
+}
+.card-section {
+	padding-bottom: 0px;
 }
 .card-image img {
   /*height: 350px;*/
@@ -149,7 +166,7 @@ form {
     margin: auto;
 }
 .submit-btn {
-	background-color: #b1dbff;
+	background-color: #FFBF00;
 	margin: 10px 0 10px 0;
 }
 
@@ -171,7 +188,7 @@ SINGLE WORK SAMPLE PAGE
 }
 #recipe-heading {
   text-align: center;
-  padding-top: 0px;
+  padding-top: 15px;
   background-color: #202020;
   color: white;
 
@@ -187,8 +204,8 @@ SINGLE WORK SAMPLE PAGE
     color: white;
 }
 ul, li {
-	display: list-item;
-	list-style-type: disc;
+	/*display: list-item;*/
+	/*list-style-type: disc;*/
 	padding-bottom: .5em;
 	margin-left: .5em;
   /*font-size: 1.5em;*/
@@ -221,6 +238,15 @@ OTHER STYLING
 .brand-logo {
   position: relative;
   display: block;
+  font-weight: 600;
+  font-size: 2.5em;
+}
+.yellow-underline {
+	border-bottom: 4px solid #e6b800;
+	display: inline-block;
+}
+.about-section {
+	background-color: #eae7e5;
 }
 
 /*
@@ -236,3 +262,17 @@ nav .brand-logo {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }*/
+@media only screen and (max-width: 992px) {
+	nav .brand-logo {
+		left: 15%;
+      -webkit-transform: translateX(-20%);
+      transform: translateX(-20%);
+	}
+}
+@media only screen and (max-width: 500px) {
+	nav .brand-logo {
+		left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+	}
+}

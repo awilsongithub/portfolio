@@ -1,4 +1,4 @@
-// IN THIS ROUTE...
+// IN THIS ROUTE...////////////////////////////////////////
 // EXPRESS + "EXPRESS.ROUTER() CLASS" > MODULE AS "ROUTER"
 // ... > + OUR CODE ADDITIONS > EXPORT TO APP
 // CRUD ROUTES FOR CLIENT > HANDLER LOGIC > INTERACT WITH DATA
@@ -44,11 +44,6 @@ router.route('/posts')
       // req.params
       var post = {}; // post document creation with param DATA
 
-      // OLD 2 FIELDS
-      // post.text = req.body.text;
-      // post.text2 = req.body.text2;
-
-
       // NEW ALL FIELDS
       post.project = req.body.project;
       post.displayOrder = parseInt(req.body.displayOrder);
@@ -71,7 +66,6 @@ router.route('/posts')
 
       // THIS COMES FROM SESSION
       post.created_by = req.body.created_by;
-
 
       // DID REQ PARAMS GET THIS FAR ? no it didnt'.
       //console.log(req);
@@ -109,7 +103,6 @@ router.route('/posts')
 
       // FIND BY ID THEN EXECUTE FUNCTION
       .get(function(req,res){
-         // temp: return res.send({message:'TODO get existing post w/ param ' + req.param.id});
          Post.findById(req.params.id, function(err, post){
             if (err){
                res.send(err);
@@ -125,9 +118,6 @@ router.route('/posts')
             if (err){
                res.send(err);
             }
-            // OLD 2 FIELDS
-            // post.created_by = req.body.created_by;
-            // post.text = req.body.text;
 
             // NEW ALL FIELDS
             post.project = req.body.project;
@@ -151,9 +141,6 @@ router.route('/posts')
 
             // THIS COMES FROM SESSION
             post.created_by = req.body.created_by;
-
-
-
 
             post.save(function(err, post){
                if (err){
