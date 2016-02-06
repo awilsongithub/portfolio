@@ -30,6 +30,13 @@ input {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
+.kuler-grey {
+	color: #644D52; /* purple/grey */
+	/*color: #A49A87; i like purple above better than this grey */
+}
+.purple-brown {
+	color: #2E2025;
+}
 ul, li {
 	display: list-item;
 	list-style-type: disc;
@@ -37,10 +44,19 @@ ul, li {
 	line-height: normal;
 	margin-left: .5em;
 }
-footer {
+
+ /* this is materialize footer */
+footer.page-footer {
+	/*background-color: #202020;*/
+	background-color: #382937; /* dark purple from kuler */
+	margin-top: 0px;
+}
+
+/* these were my original draft footer styles */
+/*footer {
+	margin-top: 0px;
 	padding-top: 25px;
 	height: px;
-	background-color: #202020;
 	color: white;
 	line-height: 1.5em;
    border-top: 1px solid #e6b800;
@@ -51,13 +67,14 @@ footer .fa ul a {
 	padding-right: .25em;
    vertical-align: middle;
 
-}
+}*/
 /*footer li, a {
 	list-style-type: none;
 	font-size: 1.25em;
     line-height: 2em;
-	/*padding-bottom: 0px;*/
-}*/
+	/*padding-bottom: 0px;
+} */
+
 #three-column {
 	padding: 0px 25px 0px 25px;
 }
@@ -68,6 +85,20 @@ blockquote {
 .align-right {
 	text-align: right;
 	font-weight: 500;
+}
+.divider-bar {
+	/*background: #f0f0f0;*/
+	/*background: repeating-linear-gradient(135deg, #ebd007, #ebd007 30px, #555 30px, #555 60px);*/
+	/*background: repeating-linear-gradient(125deg, #e6b800, #e6b800 30px, #2A1D24 30px, #2A1D24 60px);*/
+	background-color: #382937; /* dark purple from kuler */
+	height: 75px;
+	color: white;
+}
+.divider-bar p {
+	margin-top: 0px;
+	padding-left: 5%;
+	padding-top: 10px;
+
 }
 /*container {   DIDN'T WORK...
 	width: 85%;
@@ -80,9 +111,10 @@ NAV
 
 nav {
 	padding-top: 0px;
-	height: 100px;
-	background-color: #202020;
-	border-bottom: 1px solid #e6b800;
+	height: 75px;
+	/*background-color: #2A1D24;*/
+	/*background-color: #5A3E4C;*/
+	background-color: #382937; /* dark purple from kuler */
 }
 
 
@@ -101,7 +133,7 @@ HERO DIV
 #hero-image {
 	/*81, 45, 168,*/
 	background:
-	linear-gradient(rgba(99, 92, 36, 0.5), rgba(0, 0, 0, 0.7)), url(../media/workspace.jpg);
+	linear-gradient(rgba(90, 62, 76, 0.5), rgba(0, 0, 0, 0.7)), url(../media/adam_workspace_cropped.jpg);
 	/*background: rgba(70, 72, 82, 0.3);*/
 	/*linear-gradient(rgba(40, 53, 147, 0.3), rgba(0, 0, 0, 0.5)), url(../media/workspace.jpg);*/
 	 /*background-color: rgba(81, 45, 168, .5);*/
@@ -124,10 +156,10 @@ RECIPE CARDS
 	/*color: white;*/
 }
 .card {
-    min-height: 460px;
+    /*min-height: 460px;*/
 }
 #card-column {
-	padding: 15px;
+	padding: 0 45 0 0;
 }
 .card-title {
   background: rgba(81, 45, 168, .9);
@@ -144,11 +176,31 @@ RECIPE CARDS
 .card-content {
   color: #353A3B;
 }
-.card-action {
-	padding-top: 0px;
+/*.card .card-action {
+	padding-left: 20px;
+}*/
+	/*padding-top: 0px;
    padding-bottom: 0px;
-	color: #565656;
+	color: #565656;*/
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: left;*/
+	/*font-size: .9em;*/
+	/*color: #D3D7DF;
+	background-color: red;
 }
+.card a, .card-action a {*/
+	/*padding-top: 0px;
+   padding-bottom: 0px;
+	color: #565656;*/
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: left;*/
+	/*font-size: .9em;*/
+	/*color: #D3D7DF;
+}*/
 .chip {
   font-size: 1.25em;
 }
@@ -216,6 +268,7 @@ ul, li {
   border-bottom: dashed 2px #e5e2db;*/
 }
 .list-header {
+
     border-bottom: 1px #e5e2db;
     background-color: #FAF9F5;
     padding-top: 1em;
@@ -242,11 +295,11 @@ OTHER STYLING
   font-size: 2.5em;
 }
 .yellow-underline {
-	border-bottom: 4px solid #e6b800;
+	border-bottom: 4px solid #ffab40;
 	display: inline-block;
 }
 .about-section {
-	background-color: #eae7e5;
+	background-color: #F6F4F1;
 }
 
 /*

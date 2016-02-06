@@ -8,7 +8,7 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
   <!-- $scope.variables are available here -->
   <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
   <!-- <h4>{{current_user}}'s Projects'</h4>   -->
-  <h4>Add Project</h4>
+  <h5 class="kuler-grey">Add Project</h5>
 
       <!-- OLD WAS TEXT AND TEXT2 ONLY -->
       <!-- <textarea required placeholder="text" ng-model="newPost.text"></textarea>
@@ -45,10 +45,20 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
     <div class="row">
        <div id="hero-text">
         <h3 id="hero-heading">Junior Front End Developer</h3>
-        <h5 id="hero-subheading">HTML5, CSS3, Javascript, MEAN Stack...</h5>
+        <h5 class="extra light" id="hero-subheading">HTML5, CSS3, Javascript, MEAN Stack...</h5>
+        <!-- <button type="button" name="view-work" value="See Work Samples"></button> -->
       </div>
     </div>
 </div> <!-- END HERO IMAGE AREA -->
+
+<!--------------------->
+<!--  DIVIDER-BAR    -->
+<!--------------------->
+<div class="divider-bar">
+<p class="center">
+   Pardon our dust. Portfolio under construction.
+</p>
+</div>
 
 
 <!--------------------->
@@ -57,7 +67,7 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 <section id='portfolio'>
    <div class="wrapper card-section">
       <!-- <h3 class="yellow-underline">Portfolio</h3> -->
-      <h4 class="yellow-underline">Work Samples</h4>
+      <h5 class="kuler-grey">Work Samples</h5>
       <div class="row">
 
          <!-- <div class="post" ng-repeat="post in posts | orderBy:'displayOrder'"> -->
@@ -65,16 +75,22 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 
             <a href="#/project/"> <!-- MAY UPDATE TO "/#project/{{_id}}" & TAKE ID FROM CURRENT POST? -->
               <div id="card-column" class="col s12 m6 l4">
-                <div class="card medium hoverable"> <!-- add "large"? -->
+                <div class="card hoverable"> <!-- add "large"? -->
                   <div class="card-image">
                     <img src="{{post.cardImage}}">
                   </div>
-                  <div class="card-content">
-                     <h5>{{post.project}}</h5>
+                  <!-- <div class="card-content">
+                     <h6>{{post.project}}</h6>
+                     <p>{{post.description}}</p>
+                  </div> -->
+                  <div class="card-content extra light">
+                     <h6>{{post.project}}</h6>
                      <p>{{post.description}}</p>
                   </div>
-                  <div class="card-action">
-                    <p>{{post.tags}}</p>
+                  <div class="card-action extra light">
+                     <a href="#">details</a>
+                     <a href="#">live site</a>
+                     <a href="#">github</a>
                   </div>
                 </div>
               </div>
@@ -99,34 +115,34 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 
      <!--   ABOUT   -->
      <div id="three-column" class="col s12 m12 l4">
-        <h4 class="yellow-underline">About</h4>
-          <p>Adam is a Chicago-based junior developer with an Information Systems BA and years of experience as a webmaster, office manager and communications coordinator. He has a passion for coding, learning, visual design, and helping others.</p>
+        <h5 class="kuler-grey">About Adam</h5>
+          <p class="extra light">Adam is a Chicago-based junior developer with an Information Systems BA and years of experience as a webmaster, office manager and communications coordinator. He has a passion for coding, learning, visual design, and helping others.</p>
     </div>
 
 
     <!--   SKILLS  -->
   <div class="col s12 m12 l4 " id="three-column" >
-     <h4 class="yellow-underline">Skills</h4>
+     <h5 class="kuler-grey">Technical Skills Highlights</h5>
       <h6>Front End</h6>
-      <p>HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
+      <p class="extra light">HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
       <h6>Full Stack</h6>
-      <p>HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
+      <p class="extra light">HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
       <h6>General Technical</h6>
-      <p>HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
+      <p class="extra light">HTML5, CSS/LESS, Javascript/JQuery, AngularJS, Materialize</p>
    </div>
 
 
   <!--   TESTIMONIALS  -->
   <div class="col s12 m12 l4" id="three-column" >
-     <h4 class="yellow-underline">Testimonials</h4>
-      <p>
+     <h5 class="kuler-grey">Testimonials</h5>
+      <p class="extra light">
       This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag.
       </p>
-      <p class="align-right">- Megan Coleman, Megan Coleman Design</p>
-      <p>
+      <p class="align-right light">- Megan Coleman, Megan Coleman Design</p>
+      <p class="extra light">
       This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag. This is an example quotation that uses the blockquote tag.
       </p>
-      <p class="align-right">- Megan Coleman, Megan Coleman Design</p>
+      <p class="align-right light">- Megan Coleman, Megan Coleman Design</p>
   </div>
 
 </div>
