@@ -9,8 +9,17 @@ var session = require('express-session');
 var passport = require('passport');
 // we don't need to require bcrypt
 var mongoose = require('mongoose');
-// connect to mongodb on default mongo port 27017
-mongoose.connect('mongodb://localhost/chirp-test');
+
+
+// SETTING THE DB URI BASED ON THE ENVIRONMENT
+// locally (development env.) use mongodb on default mongo port 27017
+// in production env. (heroku) use live mongolab connection String
+// via the env. var so password not exposed publicly
+var dbURI = 'mongodb://localhost/chirp-test';
+if (process.env.NODE_ENV === 'production') {
+   dbURI = process.env.MONGOLAB_URI;
+}
+mongoose.connect(dbURI);
 
 // MODEL REQUIRE NEEDS HAPPEN BEFORE REQUIRE/INIT PASSPORT
 require('./models/models');
