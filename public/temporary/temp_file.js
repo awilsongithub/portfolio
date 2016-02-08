@@ -19,3 +19,15 @@ router.get('/individual/:id', function(req, res, next) {
   });
   // res.render('practice', data);
 });
+
+// for details page
+countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
+  $scope.name = $routeParams.countryName;
+  $http.get('countries.json').success(function(data) {
+     // .filter is for arrays only true results
+    var country = data.filter(function(entry){
+      return entry.name === $scope.name;
+    })[0];
+    console.log(country);
+  });
+});

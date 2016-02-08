@@ -49,8 +49,8 @@ app.config(function($routeProvider){
       controller: 'authController'
    })
    // project
-   .when('/project', {
-      templateUrl: 'project.html',
+   .when('/:postProject', {
+      templateUrl: 'post-detail.html',
       controller: 'mainController'
    });
 });
@@ -73,31 +73,42 @@ app.factory('postService', function($resource){
 // items passed with $scope are in the scope of the view templates
 app.controller('mainController', function($scope, $rootScope, postService){
    // attach variables onto our $scope (post objects, posts array)
-   $scope.posts = postService.query(); // query is get req
-
+   $scope.posts = postService.query(); // .query is get req (for all posts?)
    // NEWEST WITH ALL FIELDS
    $scope.newPost = {project: '', displayOrder: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
-
-   // POST CREATION FORM CALLS THIS FUNCTION
    // THIS NEW VERSION USES CURRENT_USER FROM THE LOGIN FUNCTION
    // INSTEAD OF USERNAME VALUE FROM FORM PARAMETERS
    // COMMENTED OUT OLD $SCOPE.POST FUNCTION PER MOD 5 NEW ONE (BELOW)
    $scope.post = function() {
-      // test does form pst here or api.js
+      // test does form pst here or api.js (API)
       console.log('posted to controller');
-
       $scope.newPost.created_by = $rootScope.current_user;
       $scope.newPost.created_at = Date.now();
-
       postService.save($scope.newPost, function(){
          $scope.posts = postService.query(); // refresh post stream
          // NEWEST WITH ALL FIELDS
          $scope.newPost = {project: '', displayOrder: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
-
       });
    }; // end post
-
 }); // end maincontroller
+
+
+
+// DETAILS PAGE CONTROLLER
+app.controller('detailController', function($scope, $routeParams, postService){
+   // set post project using project field in params taken from card's project field value
+   // postProject is just a variable name we use
+   // $scope.project = $routeParams.postProject;
+
+   // how to get access to rest of post fields...?
+   $scope.posts = postService.query();
+
+
+ });
+
+
+
+
 
 
 // AUTHENTICATION CONTROLLER

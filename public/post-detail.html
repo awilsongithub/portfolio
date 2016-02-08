@@ -1,0 +1,140 @@
+<!-------------------------------------------------------------->
+<!--                   POST DETAIL PAGE                       -->
+<!-------------------------------------------------------------->
+
+   <!---------------------------------->
+   <!--   FILTER EXPERIMENTS         -->
+   <!--SEE TODO 'S AT BOTTOM OF PAGE -->
+   <!---------------------------------->
+
+
+<!-- try with no filter to show each project name -->
+<div class="" ng-repeat="post in posts">
+
+
+   <!-- <div class="center-align"> -->
+   <div class="wrapper">
+      <h4 class="kuler-grey">Project: {{post.project}}</h4>
+      <a href="{{post.siteLink}}" class='extra-light'>live site</a>
+   </div>
+   <!--------------------->
+   <!--  IMAGES         -->
+   <!--------------------->
+   <section id='portfolio'>
+      <div class="wrapper card-section">
+         <div class="row">
+
+            <!-- 2 COLUMNS FOR IMAGE + CAPTION + LIVE+ GITHUB LINKS (IN CARDS)  -->
+
+               <!-- IMAGE1  -->
+                 <div id="card-column" class="col s12 m6 l4">
+                   <div class="card hoverable"> <!-- add "large"? -->
+                     <div class="card-image">
+                       <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image1}}">
+                     </div>
+                     <div class="card-content extra light">
+                        <p>{{post.description}}</p>
+                     </div>
+
+                   </div>
+                 </div>
+
+                 <!-- IMAGE2  -->
+                   <div id="card-column" class="col s12 m6 l4">
+                     <div class="card hoverable"> <!-- add "large"? -->
+                       <div class="card-image">
+                         <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image2}}">
+                       </div>
+                       <div class="card-content extra light">
+                          <p>{{post.description}}</p>
+                       </div>
+                       <div class="card-action extra light">
+                          <a href="#/{{post.siteLink}}">live site</a>
+                          <!-- <a href="#">github repo</a> -->
+                       </div>
+                     </div>
+                   </div>
+
+        </div> <!-- end row -->
+     </div>
+   </section> <!-- end portfolio section -->
+
+
+
+   <!--------------------------------------------->
+   <!-- TECHNOLOGIES, DESCRIPTION1, DESCRIPTION2-->
+   <!--------------------------------------------->
+   <section>
+     <div class="wrapper about-section">
+     <!-- <section id="about-section"> -->
+
+           <div class="row">
+
+               <!--   TECHNOLOGIES  -->
+               <div id="three-column" class="col s12 m12 l4">
+                  <h5 class="kuler-grey">Technologies Used</h5>
+                  <p class="extra light">{{post.tags}}</p>
+                  <ul id="technologies"></ul>
+               </div>
+
+               <!-- TODO THIS LOOP WORKS IN CODEPEN BUT NOT HERE?
+               http://codepen.io/adamwilson1234/pen/wMQwvN -->
+               <!-- <script>
+                   var array = '{{post.tags}}';
+                   for ( i = 0; i < array.length; i++ ) {
+                      var listItem = document.createElement("li");
+                      var itemText = document.createTextNode(array[i]);
+                      listItem.appendChild(itemText);
+                      document.getElementById("technologies").appendChild(listItem);
+                   }
+               </script> -->
+
+               <!--   DESCRIPTION1  -->
+               <div class="col s12 m12 l4 " id="three-column" >
+                  <h5 class="kuler-grey">Problem, Action, Result</h5>
+                  <p class="extra light">{{post.description1}}</p>
+               </div>
+
+
+               <!--   DESCRIPTION2   -->
+               <div class="col s12 m12 l4" id="three-column" >
+                  <h5 class="kuler-grey">Technical Approach</h5>
+                  <p class="extra light">{{post.description2}}</p>
+               </div>
+
+         </div>
+      </div>
+   </section>
+
+</div> <!-- end ng-repeat div -->
+
+
+
+
+
+
+
+
+
+    <!-------------------------------->
+    <!--         TODO 'S            -->
+    <!-------------------------------->
+
+    <!-- try with my custom filter to show only project name from URL param -->
+    <!-- TODO this filter isn't working. Try again later... -->
+    <!-- <div class="" ng-repeat="post in posts | filter:{ displayOrder: postProject}">
+          <h1>{{post.project}}</h1>
+          <p>{{post.description1}}</p>
+          <p>{{post.testimonial}}</p>
+          <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image1}}" width="100px">
+    </div> -->
+    <!-- TODO ?
+       in chirpApp
+       make copy of main corntrolller (to get all posts)
+          gut all but the postservice query to get all posts
+          inject $routeParams
+          $scope.currentProject = $routeParams.postProject (to get value from params)
+
+       in post-detail
+          ng-repeat filter project: $scope.currrentProject (use value to filter to that post only)
+    end -->

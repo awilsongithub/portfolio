@@ -20,25 +20,25 @@ var mongoose = require('mongoose');
 
 // NEW WITH ALL THE FIELDS
 var postSchema = new mongoose.Schema({
-   project: String,
-   displayOrder: Number,
-   description: String,
-   tags: [String],
-   siteLink: String,
-   cardImage: String,
-   cardCaption: String,
-   image1: String,
-   image1Caption: String,
-   image2: String,
-   image2Caption: String,
-   image3: String,
-   image3Caption: String,
-   image4: String,
-   image4Caption: String,
-   description1: String,
-   description2: String,
-   testimonial: String,
-   created_by: String,
+   project: String,  // project title or site
+   displayOrder: Number, // in cards on main
+   description: String, // comment out
+   tags: [String],  // technologies, skills
+   siteLink: String, // live site
+   cardImage: String,  // small 3 column preview image
+   cardCaption: String,  // USE THIS for 1 line caption
+   image1: String, // for details page 2 column large cards with captions
+   image1Caption: String, // " "
+   image2: String, // " "
+   image2Caption: String, // " "
+   image3: String,  // comment out
+   image3Caption: String, // comment out
+   image4: String, // comment out
+   image4Caption: String, // comment out
+   description1: String, // form plholder: "problem, action, solution paragraph"
+   description2: String, // form plholder "technical approach paragraph'
+   testimonial: String, // testimonial quotation
+   created_by: String, // based on session
    created_at: {type: Date, default: Date.now}
 });
 

@@ -44,7 +44,9 @@ ul, li {
 	line-height: normal;
 	margin-left: .5em;
 }
-
+.odd{
+	backgroun-color: #F6F4F1;
+}
  /* this is materialize footer */
 footer.page-footer {
 	/*background-color: #202020;*/
@@ -156,7 +158,7 @@ RECIPE CARDS
 	/*color: white;*/
 }
 .card {
-    /*min-height: 460px;*/
+	max-height: 500px;
 }
 #card-column {
 	padding: 0 45 0 0;
@@ -233,7 +235,7 @@ form {
 SINGLE WORK SAMPLE PAGE
 ===================================
 */
-#main-image-section {
+/*#main-image-section {
   background-color: #FAF9F5;
   padding-top: 25px;
   padding-bottom: 0px;
@@ -244,17 +246,16 @@ SINGLE WORK SAMPLE PAGE
   background-color: #202020;
   color: white;
 
-}
-#recipe-main-image {
+}*/
+/*#recipe-main-image {
   width: 100%;
-  /*max-height: 350px;*/
   overflow: hidden;
   object-fit: cover;
 }
 #cooktime-div {
     background-color: #757575;
     color: white;
-}
+}*/
 ul, li {
 	/*display: list-item;*/
 	/*list-style-type: disc;*/
