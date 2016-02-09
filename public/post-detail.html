@@ -7,27 +7,27 @@
    <!--SEE TODO 'S AT BOTTOM OF PAGE -->
    <!---------------------------------->
 
-   <!-------------------------->
-   <!--  WORK SAMPLES LIST   -->
-   <!-------------------------->
-<div class="wrapper">
+
+<!-- <div class="wrapper">
    <div class="divider-bar-work-samples-list">
-      <h3>Welcome to My Work Samples Details Page</h3>
+      <h3>Portfolio Work Samples</h3>
       <!-- TODO STRETCH: list of samples (menu)?
       <div class="" ng-repeat="post in posts"> -->
-   </div>
-</div>
+   <!-- </div>
+</div> -->
 
-
+<!-------------------------->
+<!--  WORK SAMPLES LIST   -->
+<!-------------------------->
 <!-- try with no filter to show each project name -->
 <div class="" ng-repeat="post in posts">
 
 
    <!-- <div class="center-align"> -->
-   <div class="wrapper">
+   <div class="wrapper work-sample-title">
       <h4 class="kuler-grey">Project: {{post.project}}</h4>
       <a href="{{post.siteLink}}" class='extra-light'>live site</a>
-      <p>db entry id: {{post.ObjectId}}</p>
+      <!-- <p>db entry id: {{post.ObjectId}}</p> did not display-->
    </div>
    <!---------------------------->
    <!--  IMAGE & CAPTION CARDS -->
@@ -45,7 +45,7 @@
                        <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image1}}">
                      </div>
                      <div class="card-content extra light">
-                        <p>{{post.description}}</p>
+                        <p>{{post.Image1Caption}}</p>
                      </div>
 
                    </div>
@@ -58,10 +58,22 @@
                          <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image2}}">
                        </div>
                        <div class="card-content extra light">
-                          <p>{{post.description}}</p>
+                          <p>{{post.image2Caption}}</p>
                        </div>
                      </div>
                    </div>
+
+                   <!-- IMAGE3  -->
+                    <div id="card-column" class="col s12 m6 l4">
+                      <div class="card hoverable"> <!-- add "large"? -->
+                        <div class="card-image">
+                          <img id="recipe-main-image" class="materialboxed responsive-image" src="{{post.image3}}">
+                        </div>
+                        <div class="card-content extra light">
+                           <p>{{post.image3Caption}}</p>
+                        </div>
+                      </div>
+                    </div>
 
         </div> <!-- end row -->
      </div>

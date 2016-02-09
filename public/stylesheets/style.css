@@ -16,10 +16,13 @@ div {
 }
 .wrapper {
 	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 	padding-left: 5%;
 	padding-right: 5%;
 	 /*75px 30px 75px;*/
+}
+.work-sample-title {
+	padding-bottom: 0px;
 }
 input {
   height: 2em;
@@ -116,8 +119,8 @@ NAV
 */
 
 nav {
-	padding-top: 0px;
-	height: 75px;
+	padding-top: 100px;
+	height: 90px;
 	/*background-color: #2A1D24;*/
 	/*background-color: #5A3E4C;*/
 	background-color: #382937; /* dark purple from kuler */
@@ -178,6 +181,8 @@ RECIPE CARDS
 .card-image img {
   /*height: 350px;*/
   width: 100%;
+  max-height: 300px;
+  /*height: 200px; this can change aspect ratio */
 }
 .card-content {
   color: #353A3B;
