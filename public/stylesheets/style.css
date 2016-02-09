@@ -96,6 +96,10 @@ blockquote {
 	height: 75px;
 	color: white;
 }
+.divider-bar-work-samples-list {
+	background-color: #F6F4F1; /* grey */
+	height: 75px;
+}
 .divider-bar p {
 	margin-top: 0px;
 	padding-left: 5%;

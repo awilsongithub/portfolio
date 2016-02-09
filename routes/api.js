@@ -151,16 +151,16 @@ router.route('/posts')
          });
       })
 
+
       // DELETE POST WITH ID IN REQ.PARAMS
       .delete(function(req,res){
          // temp: return res.send({message:'TODO delete post of id: ' + req.param.id})
          Post.remove({
             _id: req.params.id
          }, function(err) {
-            if (err) {
+            if (err)
                res.send(err);
-            }
-            res.json('deleted');
+            res.json("deleted: (");
          });
       });
 

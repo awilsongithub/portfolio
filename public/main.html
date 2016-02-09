@@ -6,31 +6,28 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
 <!---------------------------------------------------------->
 <form ng-Submit="post()" ng-show="authenticated">
   <!-- $scope.variables are available here -->
+  <!-- inputs linked to model with ng-model -->
   <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
   <!-- <h4>{{current_user}}'s Projects'</h4>   -->
   <h5 class="kuler-grey">Add Project</h5>
-      <!-- OLD WAS TEXT AND TEXT2 ONLY -->
-      <!-- <textarea required placeholder="text" ng-model="newPost.text"></textarea>
-      <textarea required placeholder="text2" ng-model="newPost.text2"></textarea> -->
-      <!-- NEW ALL FIELDS  -->
-     <input required placeholder="Project Name" ng-model="newPost.project"></textarea>
-     <input type='number' placeholder="In what order should this work sample appear (ie 1, 2...)" ng-model="newPost.displayOrder">
-     <input required placeholder="description" ng-model="newPost.description"></textarea>
-     <input  required placeholder="Technologies used (comma separated)" ng-model="newPost.tags"></textarea>
+     <input required placeholder="Site or Project Name" ng-model="newPost.project"></textarea>
+     <input type='number' placeholder="Display order among samples" ng-model="newPost.displayOrder">
+     <input placeholder="Don't use TODO comment out" ng-model="newPost.description"></textarea>
+     <input  required placeholder="Technologies and Skills used (comma separated)" ng-model="newPost.tags"></textarea>
      <input  placeholder="Live site url (ie http://...)" ng-model="newPost.siteLink" type='url' required pattern="https?://.+"></textarea>
-     <input  required placeholder="Small preview image (url)" ng-model="newPost.cardImage"></textarea>
-     <input  required placeholder="cardCaption" ng-model="newPost.cardCaption"></textarea>
+     <input  required placeholder="Small 3 column project preview image (url)" ng-model="newPost.cardImage"></textarea>
+     <input  required placeholder="Caption for project preview image" ng-model="newPost.cardCaption"></textarea>
      <input   placeholder="image1 url" ng-model="newPost.image1"></textarea>
-     <input   placeholder="image1Caption" ng-model="newPost.image1Caption"></textarea>
+     <input   placeholder="image1 caption" ng-model="newPost.image1Caption"></textarea>
      <input   placeholder="image2 url" ng-model="newPost.image2"></textarea>
-     <input   placeholder="image2Caption" ng-model="newPost.image2Caption"></textarea>
+     <input   placeholder="image2 caption" ng-model="newPost.image2Caption"></textarea>
      <input   placeholder="image3 url" ng-model="newPost.image3"></textarea>
-     <input   placeholder="image3Caption" ng-model="newPost.image3Caption"></textarea>
-     <input   placeholder="image4 url" ng-model="newPost.image4"></textarea>
-     <input   placeholder="image4Caption" ng-model="newPost.image4Caption"></textarea>
-     <input  placeholder="description1" ng-model="newPost.description1"></textarea>
-     <input  placeholder="description2" ng-model="newPost.description2"></textarea>
-     <input  placeholder="testimonial" ng-model="newPost.testimonial"></textarea>
+     <input   placeholder="image3 caption" ng-model="newPost.image3Caption"></textarea>
+     <input   placeholder="Do not use TODO comment out" url" ng-model="newPost.image4"></textarea>
+     <input  placeholder="Do not use TODO comment out" ng-model="newPost.image4Caption"></textarea>
+     <input  placeholder="Problem, action, solution paragraph" ng-model="newPost.description1"></textarea>
+     <input  placeholder="Technical approach paragraph" ng-model="newPost.description2"></textarea>
+     <input  placeholder="testimonial paragraph if any" ng-model="newPost.testimonial"></textarea>
      <!-- created_by and created_at automatically populated  -->
      <input type="submit" value="Save" />
 </form>

@@ -7,6 +7,17 @@
    <!--SEE TODO 'S AT BOTTOM OF PAGE -->
    <!---------------------------------->
 
+   <!-------------------------->
+   <!--  WORK SAMPLES LIST   -->
+   <!-------------------------->
+<div class="wrapper">
+   <div class="divider-bar-work-samples-list">
+      <h3>Welcome to My Work Samples Details Page</h3>
+      <!-- TODO STRETCH: list of samples (menu)?
+      <div class="" ng-repeat="post in posts"> -->
+   </div>
+</div>
+
 
 <!-- try with no filter to show each project name -->
 <div class="" ng-repeat="post in posts">
@@ -16,10 +27,11 @@
    <div class="wrapper">
       <h4 class="kuler-grey">Project: {{post.project}}</h4>
       <a href="{{post.siteLink}}" class='extra-light'>live site</a>
+      <p>db entry id: {{post.ObjectId}}</p>
    </div>
-   <!--------------------->
-   <!--  IMAGES         -->
-   <!--------------------->
+   <!---------------------------->
+   <!--  IMAGE & CAPTION CARDS -->
+   <!---------------------------->
    <section id='portfolio'>
       <div class="wrapper card-section">
          <div class="row">
@@ -48,10 +60,6 @@
                        <div class="card-content extra light">
                           <p>{{post.description}}</p>
                        </div>
-                       <div class="card-action extra light">
-                          <a href="#/{{post.siteLink}}">live site</a>
-                          <!-- <a href="#">github repo</a> -->
-                       </div>
                      </div>
                    </div>
 
@@ -74,24 +82,21 @@
                <div id="three-column" class="col s12 m12 l4">
                   <h5 class="kuler-grey">Technologies Used</h5>
                   <p class="extra light">{{post.tags}}</p>
-                  <ul id="technologies"></ul>
-               </div>
+                  <!-- <ul id="technologies"></ul> SEE TODO at bottom: looping > li's -->
 
-               <!-- TODO THIS LOOP WORKS IN CODEPEN BUT NOT HERE?
-               http://codepen.io/adamwilson1234/pen/wMQwvN -->
-               <!-- <script>
-                   var array = '{{post.tags}}';
-                   for ( i = 0; i < array.length; i++ ) {
-                      var listItem = document.createElement("li");
-                      var itemText = document.createTextNode(array[i]);
-                      listItem.appendChild(itemText);
-                      document.getElementById("technologies").appendChild(listItem);
-                   }
-               </script> -->
+                  <h5 class="kuler-grey">Project Links</h5>
+                  <a href="{{post.siteLink}}"><p class="extra light">Live site</p></a>
+                  <!-- TODO add github link field -->
+                  <a href="#"><p class="extra light">TODO: Github repo</p></a>
+
+                  <h5 class="kuler-grey">Testimonials</h5>
+                  <p class="extra light">{{post.testimonial}}</p>
+
+               </div>
 
                <!--   DESCRIPTION1  -->
                <div class="col s12 m12 l4 " id="three-column" >
-                  <h5 class="kuler-grey">Problem, Action, Result</h5>
+                  <h5 class="kuler-grey">About the Project</h5>
                   <p class="extra light">{{post.description1}}</p>
                </div>
 
@@ -138,3 +143,15 @@
        in post-detail
           ng-repeat filter project: $scope.currrentProject (use value to filter to that post only)
     end -->
+
+    <!-- TODO THIS LOOP WORKS IN CODEPEN BUT NOT HERE?
+   http://codepen.io/adamwilson1234/pen/wMQwvN -->
+   <!-- <script>
+       var array = '{{post.tags}}';
+       for ( i = 0; i < array.length; i++ ) {
+          var listItem = document.createElement("li");
+          var itemText = document.createTextNode(array[i]);
+          listItem.appendChild(itemText);
+          document.getElementById("technologies").appendChild(listItem);
+       }
+   </script> -->

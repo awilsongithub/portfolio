@@ -75,6 +75,7 @@ app.controller('mainController', function($scope, $rootScope, postService){
    // attach variables onto our $scope (post objects, posts array)
    $scope.posts = postService.query(); // .query is get req (for all posts?)
    // NEWEST WITH ALL FIELDS
+   // newPost is the ng-model for post form fields.
    $scope.newPost = {project: '', displayOrder: '', description: '', tags: [''], siteLink: '', cardImage: '', cardCaption: '', image1: '', image1Caption: '', image2: '', image2Caption: '', image3: '', image3Caption: '', image4: '', image4Caption: '', description1: '', description2: '', testimonial: '', created_by: '', created_at: ''};
    // THIS NEW VERSION USES CURRENT_USER FROM THE LOGIN FUNCTION
    // INSTEAD OF USERNAME VALUE FROM FORM PARAMETERS
