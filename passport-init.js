@@ -27,6 +27,11 @@ module.exports = function(passport){
 		});
 	});
 
+
+	// CALLED BY LOGIN FORM WITH NG-SUBMIT
+	// TAKES USERNAME AND PASSWORD AS PARAMETERS
+	// CALLS isValidPassword FOR ENCRYPTED PWD COMPARISON
+	// RETURNS DONE NULL USER (NULL = NO ERROR)
 	passport.use('login', new LocalStrategy({
 			passReqToCallback : true
 		},

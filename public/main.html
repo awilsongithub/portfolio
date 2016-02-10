@@ -10,21 +10,27 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
   <!-- <input required type="text" class="form-control" placeholder="Your name" ng-model="newPost.created_by"/> -->
   <!-- <h4>{{current_user}}'s Projects'</h4>   -->
   <h5 class="kuler-grey">Add Project</h5>
+
+     <label for="">Main Info</label>
      <input required placeholder="Site or Project Name" ng-model="newPost.project"></textarea>
-     <input type='number' placeholder="Display order among samples" ng-model="newPost.displayOrder">
-     <input placeholder="Don't use TODO comment out" ng-model="newPost.description"></textarea>
-     <input  required placeholder="Technologies and Skills used (comma separated)" ng-model="newPost.tags"></textarea>
+     <input type='number' placeholder="Display order" ng-model="newPost.displayOrder">
+     <!-- <input placeholder="Don't use TODO comment out" ng-model="newPost.description"></textarea> -->
+     <input  required placeholder="Technologies and Skills" ng-model="newPost.tags"></textarea>
      <input  placeholder="Live site url (ie http://...)" ng-model="newPost.siteLink" type='url' required pattern="https?://.+"></textarea>
-     <input  required placeholder="Small 3 column project preview image (url)" ng-model="newPost.cardImage"></textarea>
-     <input  required placeholder="Caption for project preview image" ng-model="newPost.cardCaption"></textarea>
-     <input   placeholder="image1 url" ng-model="newPost.image1"></textarea>
-     <input   placeholder="image1 caption" ng-model="newPost.image1Caption"></textarea>
-     <input   placeholder="image2 url" ng-model="newPost.image2"></textarea>
-     <input   placeholder="image2 caption" ng-model="newPost.image2Caption"></textarea>
-     <input   placeholder="image3 url" ng-model="newPost.image3"></textarea>
-     <input   placeholder="image3 caption" ng-model="newPost.image3Caption"></textarea>
-     <input   placeholder="Do not use TODO comment out" url" ng-model="newPost.image4"></textarea>
-     <input  placeholder="Do not use TODO comment out" ng-model="newPost.image4Caption"></textarea>
+
+     <label for="">Images and Captions</label>
+     <input  required placeholder="Card preview image url" ng-model="newPost.cardImage"></textarea>
+     <input  required placeholder="Card caption" ng-model="newPost.cardCaption"></textarea>
+     <input   placeholder="image 1 url" ng-model="newPost.image1"></textarea>
+     <input   placeholder="image 1 caption" ng-model="newPost.image1Caption"></textarea>
+     <input   placeholder="image 2 url" ng-model="newPost.image2"></textarea>
+     <input   placeholder="image 2 caption" ng-model="newPost.image2Caption"></textarea>
+     <input   placeholder="image 3 url" ng-model="newPost.image3"></textarea>
+     <input   placeholder="image 3 caption" ng-model="newPost.image3Caption"></textarea>
+     <!-- <input   placeholder="Do not use TODO comment out" url" ng-model="newPost.image4"></textarea> -->
+     <!-- <input  placeholder="Do not use TODO comment out" ng-model="newPost.image4Caption"></textarea> -->
+
+     <label for="">Descriptions and Testimonial</label>
      <input  placeholder="Problem, action, solution paragraph" ng-model="newPost.description1"></textarea>
      <input  placeholder="Technical approach paragraph" ng-model="newPost.description2"></textarea>
      <input  placeholder="testimonial paragraph if any" ng-model="newPost.testimonial"></textarea>
@@ -132,7 +138,7 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
      <h5 class="kuler-grey">Testimonials</h5>
       <p class="extra light">Adam is ambitious, responsible, friendly and detail-oriented. He managed the website I designed for First United which was not an easy task. He had to balance the comments and opinions of a variety of people, but always managed to come up with new ideas on how to improve the site. He was a pleasure to work with!</p>
       <p class="align-right light">- Megan Coleman, Megan Coleman Design</p>
-      <p class="extra light">I had the opportunity to interact with Adam while in his role as Communications Coordinator/Office Manager at First United. He took an active role in improving the church’s website from just being a “brochure ware” site to a destination for members and visitors to learn about the opportunities and day-to-day events occurring at the church. As an active member of the Communications Committee he brought both strategic and tactical insights and suggestions for continued improvements for the site as well as improving email communications and the use of Eventbuilder. Adam demonstrated willingness to help whenever needed and juggled the responsibilities required of him by church staff and that of a Communications Committee made up of church members with vary levels of digital experience.</p>
+      <p class="extra light">I had the opportunity to interact with Adam while in his role as Communications Coordinator/Office Manager at First United. He took an active role in improving the church’s website from just being a “brochure ware” site to a destination for members and visitors to learn about opportunities and day-to-day events. Adam brought both strategic and tactical insights and suggestions for continued improvements for the site as well as improving email communications and the use of Eventbuilder. Adam demonstrated willingness to help whenever needed and juggled the responsibilities required of him by church staff and that of a Communications Committee made up of church members with varied levels of digital experience.</p>
       <p class="align-right light">- Stuart Gillette, National Marketing Manager, The Northern Trust Co.</p>
   </div>
 

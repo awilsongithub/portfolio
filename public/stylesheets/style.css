@@ -25,10 +25,12 @@ div {
 	padding-bottom: 0px;
 }
 input {
-  height: 2em;
+  height: 1.5em;
   width: 100%;
   font-size: 1.5em;
   padding-bottom: .5em;
+  margin: 15px 0 15px 0;
+  /*border: 2px solid;*/
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -228,8 +230,12 @@ form {
     max-width: 80%;
     margin: auto;
 }
+label {
+	font-size: 1.25em;
+	font-weight: bold;
+}
 .submit-btn {
-	background-color: #FFBF00;
+	background-color: #ffab40;
 	margin: 10px 0 10px 0;
 }
 
