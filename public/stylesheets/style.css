@@ -4,12 +4,7 @@ MAJOR ELEMENTS
 ===================================
 */
 body {
-	/*padding-top:0px;
-	width: 100%;
-	height: 100%;
-	width: 100%;
-	height: 100%;*/
-	/*font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;*/
+
 }
 div {
 	min-height: 10px;
@@ -19,7 +14,6 @@ div {
 	padding-bottom: 0px;
 	padding-left: 5%;
 	padding-right: 5%;
-	 /*75px 30px 75px;*/
 }
 .work-sample-title {
 	padding-bottom: 0px;
@@ -30,7 +24,6 @@ input {
   font-size: 1.5em;
   padding-bottom: .5em;
   margin: 15px 0 15px 0;
-  /*border: 2px solid;*/
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -59,31 +52,8 @@ footer.page-footer {
 	margin-top: 0px;
 }
 
-/* these were my original draft footer styles */
-/*footer {
-	margin-top: 0px;
-	padding-top: 25px;
-	height: px;
-	color: white;
-	line-height: 1.5em;
-   border-top: 1px solid #e6b800;
-}
-footer .fa ul a {
-	font-size: 1.5em;
-	color: white;
-	padding-right: .25em;
-   vertical-align: middle;
-
-}*/
-/*footer li, a {
-	list-style-type: none;
-	font-size: 1.25em;
-    line-height: 2em;
-	/*padding-bottom: 0px;
-} */
-
 #three-column {
-	padding: 0px 25px 0px 25px;
+	padding: 0rem 2.25rem 0rem 0rem;
 }
 blockquote {
   border-left: 5px solid #747474; /* Just change the color value and that's it*/
@@ -111,9 +81,7 @@ blockquote {
 	padding-top: 10px;
 
 }
-/*container {   DIDN'T WORK...
-	width: 85%;
-}*/
+
 /*
 ==================================
 NAV
@@ -145,9 +113,6 @@ HERO DIV
 	/*81, 45, 168,*/
 	background:
 	linear-gradient(rgba(90, 62, 76, 0.5), rgba(0, 0, 0, 0.7)), url(../media/adam_workspace_cropped.jpg);
-	/*background: rgba(70, 72, 82, 0.3);*/
-	/*linear-gradient(rgba(40, 53, 147, 0.3), rgba(0, 0, 0, 0.5)), url(../media/workspace.jpg);*/
-	 /*background-color: rgba(81, 45, 168, .5);*/
 	background-size: cover;
 	color: white;
 	height: 450px;
@@ -159,9 +124,7 @@ HERO DIV
 RECIPE CARDS
 ===================================
 */
-/*.post-stream {
 
-}*/
 #portfolio {
 	/*background-color: #202020;*/
 	/*color: white;*/
@@ -189,31 +152,7 @@ RECIPE CARDS
 .card-content {
   color: #353A3B;
 }
-/*.card .card-action {
-	padding-left: 20px;
-}*/
-	/*padding-top: 0px;
-   padding-bottom: 0px;
-	color: #565656;*/
-	/*padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	text-align: left;*/
-	/*font-size: .9em;*/
-	/*color: #D3D7DF;
-	background-color: red;
-}
-.card a, .card-action a {*/
-	/*padding-top: 0px;
-   padding-bottom: 0px;
-	color: #565656;*/
-	/*padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	text-align: left;*/
-	/*font-size: .9em;*/
-	/*color: #D3D7DF;
-}*/
+
 .chip {
   font-size: 1.25em;
 }
@@ -250,38 +189,11 @@ label {
 SINGLE WORK SAMPLE PAGE
 ===================================
 */
-/*#main-image-section {
-  background-color: #FAF9F5;
-  padding-top: 25px;
-  padding-bottom: 0px;
-}
-#recipe-heading {
-  text-align: center;
-  padding-top: 15px;
-  background-color: #202020;
-  color: white;
 
-}*/
-/*#recipe-main-image {
-  width: 100%;
-  overflow: hidden;
-  object-fit: cover;
-}
-#cooktime-div {
-    background-color: #757575;
-    color: white;
-}*/
 ul, li {
-	/*display: list-item;*/
-	/*list-style-type: disc;*/
 	padding-bottom: .5em;
 	margin-left: .5em;
-  /*font-size: 1.5em;*/
-  /*font-weight: thin;
-  line-height: 120%;
-  padding-top: .7em;
-  padding-bottom: .7em;
-  border-bottom: dashed 2px #e5e2db;*/
+
 }
 .list-header {
 
@@ -317,6 +229,11 @@ OTHER STYLING
 .about-section {
 	background-color: #F6F4F1;
 }
+#imageadam {
+    width: 50%;
+	 margin: auto;
+	 max-width: 250px;
+}
 
 /*
 ==================================
@@ -324,13 +241,6 @@ MEDIA QUERIES
 ===================================
 */
 
-/*HOW OVERIDE THIS WHICH CENTERS BRAND LOGO AT MEDIUM
-@media only screen and (max-width: 980px)
-nav .brand-logo {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}*/
 @media only screen and (max-width: 992px) {
 	nav .brand-logo {
 		left: 15%;
@@ -345,3 +255,93 @@ nav .brand-logo {
       transform: translateX(-50%);
 	}
 }
+/*HOW OVERIDE THIS WHICH CENTERS BRAND LOGO AT MEDIUM
+@media only screen and (max-width: 980px)
+nav .brand-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}*/
+
+
+/*
+==================================
+REMOVED CODE
+===================================
+*/
+
+/*.card .card-action {
+	padding-left: 20px;
+}*/
+	/*padding-top: 0px;
+   padding-bottom: 0px;
+	color: #565656;*/
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: left;*/
+	/*font-size: .9em;*/
+	/*color: #D3D7DF;
+	background-color: red;
+}
+.card a, .card-action a {*/
+	/*padding-top: 0px;
+   padding-bottom: 0px;
+	color: #565656;*/
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	text-align: left;*/
+	/*font-size: .9em;*/
+	/*color: #D3D7DF;
+}*/
+
+
+/*#main-image-section {
+  background-color: #FAF9F5;
+  padding-top: 25px;
+  padding-bottom: 0px;
+}
+#recipe-heading {
+  text-align: center;
+  padding-top: 15px;
+  background-color: #202020;
+  color: white;
+
+}*/
+/*#recipe-main-image {
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+#cooktime-div {
+    background-color: #757575;
+    color: white;
+}*/
+
+/*container {   DIDN'T WORK...
+	width: 85%;
+}*/
+
+/* these were my original draft footer styles */
+/*footer {
+	margin-top: 0px;
+	padding-top: 25px;
+	height: px;
+	color: white;
+	line-height: 1.5em;
+   border-top: 1px solid #e6b800;
+}
+footer .fa ul a {
+	font-size: 1.5em;
+	color: white;
+	padding-right: .25em;
+   vertical-align: middle;
+
+}*/
+/*footer li, a {
+	list-style-type: none;
+	font-size: 1.25em;
+    line-height: 2em;
+	/*padding-bottom: 0px;
+} */

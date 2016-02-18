@@ -11,7 +11,6 @@
 // [ ] holds dependencies for the app ngRoute, ngResource
 // these are script linked in index.html to cdn
 
-//
 var app = angular.module('chirpApp', ['ngRoute', 'ngResource']).run(function($rootScope, $http){
    // DECLARE $ROOTSCOPE VARIABLES.
    // ANGUULAR USES $ TO DENOTE PUBLIC/GLOBAL? OBJECTS USABLE ANYWHERE
@@ -94,24 +93,6 @@ app.controller('mainController', function($scope, $rootScope, postService){
 }); // end maincontroller
 
 
-
-// DETAILS PAGE CONTROLLER
-app.controller('detailController', function($scope, $routeParams, postService){
-   // set post project using project field in params taken from card's project field value
-   // postProject is just a variable name we use
-   // $scope.project = $routeParams.postProject;
-
-   // how to get access to rest of post fields...?
-   $scope.posts = postService.query();
-
-
- });
-
-
-
-
-
-
 // AUTHENTICATION CONTROLLER
 // $location is used for redirects
 app.controller('authController', function($scope, $http, $rootScope, $location){
@@ -151,10 +132,23 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
 }); // end authcontroller
 
 
+// DETAILS PAGE CONTROLLER
+app.controller('detailController', function($scope, $routeParams, postService){
+   // set post project using project field in params taken from card's project field value
+   // postProject is just a variable name we use
+   // $scope.project = $routeParams.postProject;
+   // how to get access to rest of post fields...?
+   $scope.posts = postService.query();
+ });
+
+
 
 //////////////////
 // CODE REMOVED //
 //////////////////
+
+
+
 
 // create post and push onto posts array
 // called on form submit, adds timestamp, pushes onto post array
