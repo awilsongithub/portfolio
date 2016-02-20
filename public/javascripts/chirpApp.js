@@ -71,6 +71,13 @@ app.factory('postService', function($resource){
 // is a function attaching a model onto $scope
 // items passed with $scope are in the scope of the view templates
 app.controller('mainController', function($scope, $rootScope, postService){
+
+   // added per Materialize requirements to initialize side nav
+   // and per http://stackoverflow.com/questions/18646756/how-to-run-function-in-angular-controller-on-document-ready
+   angular.element(document).ready(function() {
+       $(".button-collapse").sideNav();
+   });
+
    // attach variables onto our $scope (post objects, posts array)
    $scope.posts = postService.query(); // .query is get req (for all posts?)
    // NEWEST WITH ALL FIELDS

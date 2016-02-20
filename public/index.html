@@ -29,26 +29,41 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
   <!-- <body ng-app="chirpApp"> -->
   <body ng-app="chirpApp">
 
-     <!-- <div class="container"> -->
-
    <!--------------------->
    <!--       NAV       -->
    <!--------------------->
    <nav>
-      <div class="wrapper">
+      <div class="nav-wrapper">
          <a href="#" class="brand-logo">Adam Wilson</a>
-         <ul id="nav-mobile" class="right hide-on-small-and-down extra light">
+         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+         <!-- UL FOR TOP MENU ON LARGE -->
+         <ul class="right hide-on-med-and-down extra light">
             <!-- <p class="">Front End Web Developer</p> -->
             <!-- <li><a href="#/login">About</a></li> -->
             <li><a href="https://www.visualcv.com/adam-wilson?access=60N0x31Zjt" target="_blank">Resume</a></li>
             <li><a href="http://linkedin.com/in/adamwilsonprofile" target="_blank">LinkedIn</a></li>
             <li><a href="http://github.com/awilsongithub" target="_blank">Github</a></li>
-            <!-- TODO WAS TAKING ME TO POST DETAILS PAGE...?<li><a href="#contact">Contact</a></li> -->
-
+            <!-- TODO this is taking me to post details page... <li><a href="#contact" target="_self">Contact</a></li> -->
             <!-- HIDE WHEN AUTHENTICATED -->
             <li ng-hide='authenticated'><a href="#/login">Administrator Login</a></li>
             <!-- ONLY 1 ADMIN SO NO SIGNUP: or <a href="#/signup">Signup</a> -->
+            <!-- SHOW WHEN AUTHENTICATED -->
+            <li ng-show="authenticated">Signed in as {{current_user}}</li>
+            <li ng-show='authenticated'><a href="#" ng-click="logout()">Logout</a></li>
+         </ul>
 
+         <!-- UL FOR SIDE NAV ON SMALL AND MEDIUM -->
+         <ul class="side-nav extra light" id="mobile-demo">
+            <!-- <p class="">Front End Web Developer</p> -->
+            <!-- <li><a href="#/login">About</a></li> -->
+            <li><a href="https://www.visualcv.com/adam-wilson?access=60N0x31Zjt" target="_blank">Resume</a></li>
+            <li><a href="http://linkedin.com/in/adamwilsonprofile" target="_blank">LinkedIn</a></li>
+            <li><a href="http://github.com/awilsongithub" target="_blank">Github</a></li>
+            <!-- TODO this is taking me to post details page... <li><a href="#contact" target="_self">Contact</a></li> -->
+            <!-- HIDE WHEN AUTHENTICATED -->
+            <li ng-hide='authenticated'><a href="#/login">Administrator Login</a></li>
+            <!-- ONLY 1 ADMIN SO NO SIGNUP: or <a href="#/signup">Signup</a> -->
             <!-- SHOW WHEN AUTHENTICATED -->
             <li ng-show="authenticated">Signed in as {{current_user}}</li>
             <li ng-show='authenticated'><a href="#" ng-click="logout()">Logout</a></li>
@@ -72,11 +87,11 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
     <div class="container">
       <div class="row">
         <div class="col l12 m12 s12 grey-text text-lighten-3" id="contact">
-           <h5 id="contact">Connect with Adam</h5>
-            <p class="grey-text text-lighten-3 extra light">I'm currently available for full or part-time jobs, apprenticeships and internships. Let's chat!</p>
-            <p><a class="grey-text text-lighten-3" href="mailto:adamwilson1234@gmail.com">Email</a></p>
-            <p><a class="grey-text text-lighten-3" href="http://linkedin.com/in/adamwilsonprofile" target="_blank">LinkedIn</a></p>
-            <p><a class="grey-text text-lighten-3" href="http://github.com/awilsongithub" target="_blank">Github</a></p>
+           <h5 id="contact">Contact</h5>
+            <p class="grey-text text-lighten-3 extra light">Let's chat. I'm currently available for full or part-time work.</p>
+            <p><i class="fa fa-envelope"></i><a class="grey-text text-lighten-3" href="mailto:adamwilson1234@gmail.com"> Email</a></p>
+            <p><i class="fa fa-linkedin-square"></i><a class="grey-text text-lighten-3" href="http://linkedin.com/in/adamwilsonprofile" target="_blank"> LinkedIn</a></p>
+            <p><i class="fa fa-github-square"></i><a class="grey-text text-lighten-3" href="http://github.com/awilsongithub" target="_blank"> Github</a></p>
             <!-- <p><a class="grey-text text-lighten-3" href="https://www.visualcv.com/adam-wilson?access=60N0x31Zjt" target="_blank">Resume</a></p> -->
         </div>
       </div>
@@ -89,41 +104,5 @@ WILL ALWAYS SHOW UP AS /#/ IN THE URL  -->
     </div>
   </footer>
 
-
-      <!-- </div> <!-- end container --> -->
   </body>
 </html>
-
-
-
-
-
-
-<!--------------------------->
-<!--    MY FOOTER          -->
-<!--------------------------->
-
- <!-- <footer>
-    <div class="wrapper">
-      <div class="row">
-          <!-- EMPTY -->
-          <!-- <div class="col s12 m6 l6">
-           <ul>
-               <li><a href="#!"><i class="fa fa-github"></i> Github</a></li>
-               <li><a href="#!"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li> -->
-               <!-- <li><p><i class="material-icons">schedule</i> General Assembly</p></li> -->
-           <!-- </ul>
-          </div> -->
-
-          <!-- LINKS -->
-         <!-- <div class="col s12 m6 l6">
-           <ul>
-               <li><a href="#!">About</a></li>
-               <li><a href="#!">Portfolio</a></li>
-               <li><a href="#!">Resume</a></li>
-               <li><a href="#!">Contact</a></li>
-           </ul>
-          </div>
-      </div>
-    </div>
- </footer>  -->
