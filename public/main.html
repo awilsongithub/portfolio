@@ -51,14 +51,6 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
         <!-- <a href="/signup.php" class="btn btn-large orange" style="margin-top: -0.7rem;">Get Started</a> -->
 
 
-
-
-
-
-
-
-
-
         <!-- <h5 class="extra light" id="hero-subheading">HTML5 CSS3, Javascript, MEAN Stack...</h5> -->
         <!-- <button type="button" name="view-work" value="See Work Samples"></button> -->
       </div>
@@ -77,9 +69,38 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
          <!-- <div class="post" ng-repeat="post in posts | orderBy:'displayOrder'"> -->
          <div class="" ng-repeat="post in posts | orderBy:'displayOrder'">
 
-            <a href="#/{{post.project}}"> <!-- MAY UPDATE TO "/#project/{{_id}}" & TAKE ID FROM CURRENT POST? -->
+
+
+
+
+
+             <!-- NEW TRY TO LINK -->
+             <a href="#/{{post.project}}">
+               <div id="card-column" class="col s12 m6 l4">
+                 <div class="card hoverable">
+                   <div class="card-image">
+                     <img src="{{post.cardImage}}">
+                   </div>
+                   <div class="card-content extra light">
+                      <h6>{{post.project}}</h6>
+                      <p>{{post.description}}</p>
+                   </div>
+                 </div>
+               </div>
+            </a>
+
+
+
+
+
+
+
+
+
+            <!-- MAY UPDATE TO "/#project/{{_id}}" & TAKE ID FROM CURRENT POST? -->
+            <!-- <a href="#/{{post.project}}">
               <div id="card-column" class="col s12 m6 l4">
-                <div class="card hoverable"> <!-- add "large"? -->
+                <div class="card hoverable">
                   <div class="card-image">
                     <img src="{{post.cardImage}}">
                   </div>
@@ -87,13 +108,9 @@ INDEX TAKES CARE OF THE ENTIRE FRAME (DOCTYPE, HEAD, NAV, FOOTER...) -->
                      <h6>{{post.project}}</h6>
                      <p>{{post.description}}</p>
                   </div>
-                  <!-- <div class="card-action extra light">
-                     LINKS TO DETAILS, LIVE SITE IN DETAILS NOT HERE
-                  </div> -->
                 </div>
               </div>
-           </a>
-
+           </a> -->
 
         </div> <!-- end posts -->
      </div> <!-- end row -->

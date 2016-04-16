@@ -101,7 +101,7 @@ router.route('/posts')
 // EXPRESS SERVER KNOWS TO PARSE PATH PARAMETERS AS VARS
    router.route('/posts/:id')
 
-      // FIND BY ID THEN EXECUTE FUNCTION
+      // FIND BY ID IN PARAMS THEN FUNCTION RESPONDS WITH POST JSON
       .get(function(req,res){
          Post.findById(req.params.id, function(err, post){
             if (err){

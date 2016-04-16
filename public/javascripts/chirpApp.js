@@ -99,6 +99,14 @@ app.controller('mainController', function($scope, $rootScope, postService){
    }; // end post
 }); // end maincontroller
 
+// DETAILS PAGE CONTROLLER
+app.controller('detailController', function($scope, $routeParams, postService){
+   // set post project using project field in params taken from card's project field value
+   // postProject is just a variable name we use
+   // $scope.project = $routeParams.postProject;
+   // how to get access to rest of post fields...?
+   $scope.posts = postService.query();
+ });
 
 // AUTHENTICATION CONTROLLER
 // $location is used for redirects
@@ -137,16 +145,6 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
       }); // end success
    }; // end register
 }); // end authcontroller
-
-
-// DETAILS PAGE CONTROLLER
-app.controller('detailController', function($scope, $routeParams, postService){
-   // set post project using project field in params taken from card's project field value
-   // postProject is just a variable name we use
-   // $scope.project = $routeParams.postProject;
-   // how to get access to rest of post fields...?
-   $scope.posts = postService.query();
- });
 
 
 
